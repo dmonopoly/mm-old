@@ -5,7 +5,14 @@ Feature: create memories
 	
 	Scenario: navigate to memory creation page
 		Given I am on the home page
-		And I activate the new memory switch
+		When I activate the new memory switch
 		Then I should be on the new memory page
+		
+	@now
+	Scenario: create memory
+		Given I am on the new memory page
+		When I fill out the memory form
+		And I submit
+		Then I should be on the memory page for the new memory
 		
 	
