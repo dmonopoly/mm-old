@@ -12,7 +12,7 @@ Feature: create memories
 	Scenario: create memory
 		Given I am on the new memory page
 		When I fill out the memory form
-		And I submit
+		And I submit the memory form
 		Then I should be on the memory page for the new memory
 		
 	

@@ -1,4 +1,6 @@
 <!--person/memories form partial; requires variable 'memory'-->
 <%= form_for [:person, memory] do |f| %>
-	
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	<%= f.submit "", id: "submit_memory_button" %>
 <% end %>
