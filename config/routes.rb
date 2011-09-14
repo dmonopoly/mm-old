@@ -1,6 +1,8 @@
 Memorymap::Application.routes.draw do # first created => highest priority
   
-  resources :memories
+  namespace :person do
+    resources :memories
+  end
   
-  root :to => 'memories#index'
+  root :to => 'person/memories#index'
 end

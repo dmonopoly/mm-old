@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MemoriesController do
+describe Person::MemoriesController do
   describe "GET index" do
     it "exists" do
       get :index
