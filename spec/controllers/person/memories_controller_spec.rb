@@ -20,12 +20,15 @@ describe Person::MemoriesController do
   end
   
   describe "POST create" do
+    
     it "exists" do
     end
-    
-    it "redirects to the memory" do
-      post :create
-      response.should redirect_to(:action => :show)
+  
+  end
+  
+  describe "GET show" do
+    it "exists" do
     end
   end
+  
 end
