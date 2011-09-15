@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe "memories/show.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have stuff..." do
+    pending
+  end
 end

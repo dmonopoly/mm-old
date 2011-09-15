@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Memory do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @memory = Factory(:memory)
+  end
+  
+  it "is valid with necessary attributes" do
+    @memory.should be_valid
+  end
 end

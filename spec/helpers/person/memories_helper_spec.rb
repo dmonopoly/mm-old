@@ -11,5 +11,6 @@ require 'spec_helper'
 #   end
 # end
 describe Person::MemoriesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has nothing to test" do
+  end
 end

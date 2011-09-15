@@ -12,9 +12,6 @@ gem 'dynamic_form', '1.1.4' # easy error messages for forms
 # gem 'paperclip' # for file attachment
 # gem 'rmagick' # supplements paperclip for imagemagick-related things
 
-# gem 'factory_girl_rails' # for seeds.rb
-# gem 'forgery'
-
 # Maybe delete this? "Temporary - 3.1 SHOULD require >=0.9.2, but there are still bugs"
 # gem 'rake', '0.8.7'
 
@@ -27,10 +24,12 @@ group :assets do
 end
 
 group :test, :development do
-	# helpers
+	# Helpers
 	gem 'database_cleaner'
+	gem 'factory_girl_rails' # May have to move out of group for seeds.rb
+	# gem 'forgery'
 	
-	# core testing frameworks
+	# Core testing frameworks
 	gem 'rspec-rails', '>= 2.6.1'
 	gem 'cucumber-rails', '>= 1.0.0'
 	gem 'capybara', '>= 1.0.0'
