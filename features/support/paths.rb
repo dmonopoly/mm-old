@@ -16,6 +16,9 @@ module NavigationHelpers
     
     when /^the memory page for the memory (.+)$/
       person_memory_path(Memory.find_by_content($1))
+    
+    when /^the edit memory page for the memory (.+)$/
+      edit_person_memory_path(Memory.find_by_content($1))
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -1,3 +1,11 @@
-Your little project.
+a little project.
 
 Note: none of the view specs are implemented.
+
+index
+new
+create
+show
+edit
+update
+destroy

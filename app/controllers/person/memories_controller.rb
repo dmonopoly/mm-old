@@ -1,5 +1,6 @@
 class Person::MemoriesController < PersonController
   def index
+    @memories = Memory.all
   end
   
   def new
@@ -18,6 +19,10 @@ class Person::MemoriesController < PersonController
   end
   
   def show
+    @memory = Memory.find(params[:id])
+  end
+  
+  def edit
     @memory = Memory.find(params[:id])
   end
 end

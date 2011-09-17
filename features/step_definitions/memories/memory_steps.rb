@@ -3,6 +3,9 @@ When /^I activate the new memory switch$/ do
 end
 
 When /^I activate the edit memory switch for the memory "(.+)"$/ do |content|
+  puts '------------------'
+  puts "memory content: #{Memory.all[0].content}"
+  puts '------------------'
   within(".memory") do # How do I specify content?
     click_link "Alter"
   end

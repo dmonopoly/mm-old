@@ -31,4 +31,9 @@ describe Person::MemoriesController do
     end
   end
   
+  describe "GET edit" do
+    it "exists" do
+    end
+  end
+  
 end
