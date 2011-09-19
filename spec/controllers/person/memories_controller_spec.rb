@@ -20,10 +20,8 @@ describe Person::MemoriesController do
   end
   
   describe "POST create" do
-    
     it "exists" do
     end
-  
   end
   
   describe "GET show" do
@@ -32,6 +30,11 @@ describe Person::MemoriesController do
   end
   
   describe "GET edit" do
+    it "exists" do
+    end
+  end
+  
+  describe "POST update" do
     it "exists" do
     end
   end

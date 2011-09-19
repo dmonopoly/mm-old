@@ -25,4 +25,14 @@ class Person::MemoriesController < PersonController
   def edit
     @memory = Memory.find(params[:id])
   end
+  
+  def update
+    @memory = Memory.find(params[:id])
+    if @memory.update_attributes(params[:memory])
+      flash[:notice] = 'Memory updated'
+      redirect_to @memory
+    else
+      render :action => "edit"
+    end
+  end
 end

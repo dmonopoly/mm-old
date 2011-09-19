@@ -14,10 +14,10 @@ module NavigationHelpers
     when /^the new memory page$/
       new_person_memory_path
     
-    when /^the memory page for the memory (.+)$/
+    when /^the memory page for the memory "(.+)"$/
       person_memory_path(Memory.find_by_content($1))
     
-    when /^the edit memory page for the memory (.+)$/
+    when /^the edit memory page for the memory "(.+)"$/
       edit_person_memory_path(Memory.find_by_content($1))
       
     # Add more mappings here.

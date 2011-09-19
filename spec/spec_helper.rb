@@ -24,4 +24,10 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  
+  # Advice from Ryan Bates: https://gist.github.com/1212502
+  # Allows us to use the :focus tag in specs - e.g. it "does stuff", :focus do ... end
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
 end

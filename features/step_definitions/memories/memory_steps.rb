@@ -3,15 +3,13 @@ When /^I activate the new memory switch$/ do
 end
 
 When /^I activate the edit memory switch for the memory "(.+)"$/ do |content|
-  puts '------------------'
-  puts "memory content: #{Memory.all[0].content}"
-  puts '------------------'
-  within(".memory") do # How do I specify content?
+  # memory = Memory.find_by_content(content)
+  within(".memory") do # How do I specify content? - UNRESOLVED
     click_link "Alter"
   end
 end
 
-When /^I fill out the memory form with (.+)$/ do |content|
+When /^I fill out the memory form with "(.+)"$/ do |content|
   fill_in "Content", :with => content
 end
 
