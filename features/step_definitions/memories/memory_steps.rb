@@ -3,8 +3,8 @@ When /^I activate the new memory switch$/ do
 end
 
 When /^I activate the edit memory switch for the memory "(.+)"$/ do |content|
-  # memory = Memory.find_by_content(content)
-  within(".memory") do # How do I specify content? - UNRESOLVED
+  memory = Memory.find_by_content(content)
+  within("#memory_#{memory.id}") do
     click_link "Alter"
   end
 end

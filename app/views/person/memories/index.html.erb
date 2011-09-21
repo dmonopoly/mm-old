@@ -3,7 +3,7 @@
 	<%= link_to "New Memory", new_person_memory_path %>
 
 	<% @memories.each do |memory| %>
-		<div class="memory">
+		<div id="memory_<%= memory.id %>" class="memory">
 			<%= render :partial => "person/memories/partials/memory_block", :locals => { :memory => memory } %>
 		</div>
 	<% end %>

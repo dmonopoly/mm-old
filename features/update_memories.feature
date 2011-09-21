@@ -5,6 +5,7 @@ Feature: update memories
 	
 	Background:
 		Given the memory "I played" exists
+		And the memory "I worked" exists
 	
 	@now
 	Scenario: navigate to memory update page from home page
