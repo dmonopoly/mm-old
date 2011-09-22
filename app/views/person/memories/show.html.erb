@@ -1,4 +1,7 @@
 <!--person/memories/show-->
 <div id="memory_show">
-	<%= @memory.content %>
+	<div id="memory_<%= @memory.id %>">
+		<%= @memory.content %>
+		<%= link_to "Alter", [:edit,:person,@memory] %>
+	</div>
 </div>

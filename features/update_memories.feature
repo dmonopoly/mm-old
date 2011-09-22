@@ -7,13 +7,11 @@ Feature: update memories
 		Given the memory "I played" exists
 		And the memory "I worked" exists
 	
-	@now
 	Scenario: navigate to memory update page from home page
 		Given I am on the home page
 		When I activate the edit memory switch for the memory "I played"
 		Then I should be on the edit memory page for the memory "I played"
 	
-	@wip
 	Scenario: navigate to memory update page from memory page
 		Given I am on the memory page for the memory "I played"
 		When I activate the edit memory switch for the memory "I played"
