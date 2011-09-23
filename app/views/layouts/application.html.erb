@@ -2,13 +2,39 @@
 <html>
 <head>
   <title>Memorymap</title>
+	
+	<!--Blueprint stylesheets-->
+	<%= stylesheet_link_tag 'blueprint/screen', :media => "screen, projection" %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => "print" %>
+	<!--[if IE]><%= stylesheet_link_tag 'blueprint/ie', :media => 'screen, projection' %><![endif]-->
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+	<meta name="description" content="To understand the human experience and encourage a thoughtful society" />
+  <meta name="keywords" content="life, memories, understand, human, experience" />
 </head>
 <body>
 
-<%= yield %>
+	<div id="header">
+		
+	</div>
+	
+	<div id="central" class="container">
+		<div class="span-4">
+			Hi.
+		</div>
+		<div class="span-20">
+			<%= yield %>
+		</div>
+	</div>
 
+	<div id="footer">
+		<div class="container">
+			&copy; Memorymap 2011
+		</div>
+	</div>
+	
 </body>
 </html>
