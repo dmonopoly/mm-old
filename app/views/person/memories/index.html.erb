@@ -1,7 +1,8 @@
 <!--person/memories/index-->
 <div id="memory_index">
-	<%= link_to "New Memory", new_person_memory_path %>
 
+	<span class="title">Memories</span>
+	
 	<% @memories.each do |memory| %>
 		<div id="memory_<%= memory.id %>" class="memory">
 			<%= render :partial => "person/memories/partials/memory_block", :locals => { :memory => memory } %>

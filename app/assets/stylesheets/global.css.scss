@@ -1,0 +1,99 @@
+/* =============================================== */
+/*  Global              										   		 */
+/* =============================================== */
+@import "partials/variables";
+
+/* General Setup */
+a {
+	color: $link_color;
+	&:hover {
+		color: darken($link_color, 15%);
+	}
+}
+
+$title_font_size: 20px;
+span.title {
+	font-size: $title_font_size;
+}
+span.smaller_title {
+	font-size: $title_font_size - 2px;
+}
+
+/* Border Helpers */
+.my_border { // beware: borders can impact widths
+	border: 1px solid border;
+}
+.my_red_border {
+	border: 1px solid red;
+}
+
+/* Common Helpers */
+.hidden {
+	display: none;
+}
+a.no_line {
+	text-decoration: none;
+}
+.small {
+	font-size: 10px;
+}
+.big {
+	font-size: 20px;
+}
+.italic {
+	font-style: italic;
+}
+.underlined {
+	text-decoration: underline;
+}
+.bold {
+	font-weight: bold;
+}
+.not_bold {
+	font-weight: normal;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.moved_right_300 { // Handy when you want something in a form to be off to the right
+	position: absolute;
+	margin-left: 300px;
+}
+.pointer { cursor: pointer; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+li.no_bullet { list-style-type: none; }
+ul.no_left_padding { padding-left: 0; }
+.centered {
+	text-align: center;
+}
+.isolated_vertically { // used by home.mobile.erb
+	margin: 20px 0;
+}
+.isolated_horizontally {
+	margin: 0 20px;
+}
+.isolated {
+	margin: 20px;
+}
+
+/* Form Field Helpers */
+$form_field_width: 300px;
+.small_text_area {
+	width: $form_field_width;
+	height: 75px;
+}
+.longer_text_field {
+	width: $form_field_width + 10px;
+}
+.shorter_text_field {
+	width: 120px;
+}
+.field_with_errors { // overriding the div that the dynamic_form gem automatically creates on erroneous forms
+	margin: 0;
+	padding: 0;
+	display: inline;
+}

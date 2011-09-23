@@ -1,17 +1,50 @@
-// Layout file; for application.html.erb
+/* =============================================== */
+/*  Layout file (application.html.erb)  		   		 */
+/* =============================================== */
+@import "partials/variables";
+
 body {
 	background: white;
 	
 	// Header - banner area
-	#header {
+	#header { // needed so an inner div can be centered
+	  margin-top: 10px;
+    #inner_header { // centered portion of header
+      width: $central_width;
+	    height: 25px;
+  	  margin: 0 auto;
+  	  border-bottom: 1px solid $border_color;
+  	  a {
+		    text-decoration: none;
+	    }
+  		div#left_area {
+  			#logo_area {
+  			  display: inline-block;
+  			  font-family: $common_font;
+  			}
+  			#top_left_controls {
+  			  display: inline-block;
+  		  }
+  		}
+  		div#right_area {
+  			#login_area {
+			    display: inline-block;
+  			}
+        #top_right_controls {
+          display: inline-block;
+        }
+  		}
+		}
 	}
 	
 	// Primary content
 	#central {
+	  min-height: 500px;
 	}
 	
 	// Footer
 	#footer {
+	  text-align: center;
 	}
 	
 }

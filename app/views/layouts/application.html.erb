@@ -12,27 +12,42 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-	<meta name="description" content="To understand the human experience and encourage a thoughtful society" />
+	<meta name="description" content="To understand the human experience and encourage a thoughtful society." />
   <meta name="keywords" content="life, memories, understand, human, experience" />
 </head>
 <body>
 
 	<div id="header">
 		
+		<div id="inner_header" class="container">
+			<div id="left_area" class="span-22">
+				<div id="logo_area" class="span-6">
+					<%= link_to "memorymap", '/', class: "big" %>
+				</div>
+				<div id="top_left_controls" class="span-16 last">
+					<%= link_to "new memory", new_person_memory_path, class: "big" %>
+				</div>
+			</div>
+		
+			<div id="right_area" class="span-2 last">
+				<div id="login_area">
+					
+				</div>
+				<div id="top_right_controls">
+					<%= link_to "home", '/', class: "big" %>
+				</div>
+			</div>
+		</div><!--End inner header-->
+		
 	</div>
 	
-	<div id="central" class="container">
-		<div class="span-4">
-			Hi.
-		</div>
-		<div class="span-20">
+	<div id="central" class="container"
 			<%= yield %>
-		</div>
 	</div>
 
 	<div id="footer">
 		<div class="container">
-			&copy; Memorymap 2011
+			&copy; 2011 Memorymap
 		</div>
 	</div>
 	
