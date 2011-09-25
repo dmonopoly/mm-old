@@ -1,5 +1,5 @@
 When /^I activate the new memory switch$/ do
-  click_link "New Memory"
+  click_link "new memory"
 end
 
 When /^I activate the edit memory switch for the memory "(.+)"$/ do |content|
