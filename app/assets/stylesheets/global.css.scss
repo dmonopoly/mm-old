@@ -62,6 +62,10 @@ a.no_line {
 	position: absolute;
 	margin-left: 300px;
 }
+.moved_right_500 { // Handy when you want something in a form to be off to the right
+	position: absolute;
+	margin-left: 500px;
+}
 .pointer { cursor: pointer; }
 .inline { display: inline; }
 .inline-block { display: inline-block; }
