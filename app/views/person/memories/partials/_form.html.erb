@@ -1,25 +1,28 @@
 <!--person/memories form partial; requires variable 'memory'-->
 <%= form_for [:person, memory] do |f| %>
+	<!--Content-->
+	<div id="content_area">
+		<%= f.label :content %><br>
+		<%= f.text_area :content %>
+	</div>
+
 	<!--Time Frames-->
-	<div id="time_frames_area" class="moved_right_500" style="margin-top: 5px">
+	<div id="time_frames_area">
 		<label>Time Frames</label>
 	
 		<div id="time_frames_form">
 			<div id="time_frames_forms_list">
-				<ul id="date_list" class="inline-block no_left_padding">
-				<%= f.fields_for :time_frames do |builder| %>
-			    <li class="no_bullet"><%= render "person/time_frames/partials/time_frames_form", :f => builder %></li>
+				<ul id="list">
+				<%= fields_for :time_frames do |builder| %>
+			    <li><%= render "person/time_frames/partials/time_frames_form", :f => builder %></li>
 			  <% end %>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
-	<!--Content-->
-	<div id="content_area" class="inline-block">
-		<%= f.label :content %><br>
-		<%= f.text_area :content, :style => "width: 480px; height: 300px;" %>
+	<!--Button Area-->
+	<div id="buttons">
+		<%= f.submit "[_]", id: "submit_memory_button" %>
 	</div>
-	
-	<%= f.submit "[_]", id: "submit_memory_button" %>
 <% end %>

@@ -69,6 +69,8 @@ a.no_line {
 .pointer { cursor: pointer; }
 .inline { display: inline; }
 .inline-block { display: inline-block; }
+.absolute { position: absolute; }
+.relative { position: relative; }
 li.no_bullet { list-style-type: none; }
 ul.no_left_padding { padding-left: 0; }
 .centered {
