@@ -13,8 +13,10 @@
 		<div id="time_frames_form">
 			<div id="time_frames_forms_list">
 				<ul id="list">
-				<%= fields_for :time_frames do |builder| %>
-			    <li><%= render "person/time_frames/partials/time_frames_form", :f => builder %></li>
+				<%= f.fields_for :time_frames do |builder| %>
+			    <li>
+						<%= render :partial => "person/time_frames/partials/time_frames_form", :locals => { :f => builder } %>
+					</li>
 			  <% end %>
 				</ul>
 			</div>
