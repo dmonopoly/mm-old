@@ -1,12 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0' # Bundle edge Rails instead: gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '3.1.2' # Bundle edge Rails instead: gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg' # PostgreSQL database
 gem 'jquery-rails'
 gem 'coffeebeans' # to make AJAX and CoffeeScript play nicely together
 
-gem 'authlogic', '3.0.3' # smart user authentication
+gem 'authlogic', '3.1.0' # smart user authentication
 gem 'cancan', '1.6.5' # manage abilities across types of users
 gem 'dynamic_form', '1.1.4' # easy error messages for forms
 # gem 'paperclip' # for file attachment
