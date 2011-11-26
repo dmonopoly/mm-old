@@ -15,9 +15,10 @@
 				<ul id="list">
 				<%= f.fields_for :time_frames do |builder| %>
 			    <li>
-						<%= render :partial => "person/time_frames/partials/time_frames_form", :locals => { :f => builder } %>
+						<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
 					</li>
 			  <% end %>
+				<%= link_to_add_fields "add time frame", f, :time_frames, "person/time_frames/partials/" %>
 				</ul>
 			</div>
 		</div>

@@ -5,7 +5,7 @@ class Person::MemoriesController < PersonController
   
   def new
     @memory = Memory.new
-    3.times { @memory.time_frames.build }
+    1.times { @memory.time_frames.build }
   end
   
   def create
@@ -25,6 +25,7 @@ class Person::MemoriesController < PersonController
   
   def edit
     @memory = Memory.find(params[:id])
+    # 1.times { @memory.time_frames.build }
   end
   
   def update
