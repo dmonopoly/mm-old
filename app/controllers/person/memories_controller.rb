@@ -5,6 +5,7 @@ class Person::MemoriesController < PersonController
   
   def new
     @memory = Memory.new
+    3.times { @memory.time_frames.build }
   end
   
   def create
