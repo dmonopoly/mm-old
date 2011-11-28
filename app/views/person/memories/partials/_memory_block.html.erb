@@ -1,4 +1,12 @@
 <!--person/memories/partials/_memory_block; requires variable 'memory'-->
-<%= memory.content %> |
-<%= memory.time_frame_representation %><!--not set up properly yet-->
-<%= link_to "Alter", [:edit,:person,memory] %>
+<div class="memory_block">
+	<div class="content">
+		<%= memory.content %>
+	</div>
+	<div class="time_frame">
+		<%= memory.time_frame_representation %> <!--not set up properly yet-->
+	</div>
+	<div class="controls">
+		<%= link_to "Alter", [:edit,:person,memory] %>
+	</div>
+</div>

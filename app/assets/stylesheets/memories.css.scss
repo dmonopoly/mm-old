@@ -4,18 +4,34 @@
 
 @import "partials/variables";
 
+.memory_block {
+  div.content {
+    font-size: 17px;
+  }
+  div.time_frame {
+    font-size: 13px;
+    display: inline;
+  }
+  div.controls {
+    font-size: 13px;
+    display: inline;
+  }
+}
+
 #memory_new, #memory_edit {
   form {
+    text-align: center;
     div#content_area {
-      position: absolute;
+//      position: absolute;
       textarea {
         height: 30px;
       }
     }
     
     div#time_frames_area {
-      position: absolute;
-      margin-left: 500px;
+      border: 1px solid blue;
+//      position: absolute;
+//      margin-left: 500px;
       div#time_frames_form {
         div#time_frames_forms_list {
           ul#list {
@@ -23,7 +39,14 @@
             padding-left: 0;
             li {
               list-style-type: none;
+              div.fields { // textfield is in here
+                width: 200px;
+                
+                input {
+                }
+              }
             }
+            
           }
         }
       }

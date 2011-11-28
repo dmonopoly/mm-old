@@ -6,6 +6,7 @@
 /* General Setup */
 a {
 	color: $link_color;
+	text-decoration: none;
 	&:hover {
 		color: darken($link_color, 15%);
 	}
