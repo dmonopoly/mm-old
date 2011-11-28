@@ -18,5 +18,10 @@ module ApplicationHelper
     link_to_function(name, "add_fields(this, '#{association}', '#{escape_javascript(fields)}')")
   end
   
-  
+  # Creates a link that removes the nearest field in a complex form
+  # Example: <%= link_to_remove_fields "remove", f, "fields" %>
+  # The container of this link_to must have class class_name
+  def link_to_remove_fields(name, f, class_name)
+    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this, '#{class_name}')")
+  end
 end

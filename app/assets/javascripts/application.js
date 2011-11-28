@@ -8,8 +8,15 @@
 //= require jquery_ujs
 //= require memories
 
+
+/* The following functions are for complex forms & work with methods in application_helper.rb*/
 function add_fields(link, association, content) {
     var new_id = new Date().getTime();
-    var regexp = new RegExp("new_" + association, "g")
+    var regexp = new RegExp("new_" + association, "g");
     $(link).parent().before(content.replace(regexp, new_id));
+}
+
+function remove_fields(link, class_name) {
+    $(link).prev("input[type=hidden]").val("1");
+    $(link).closest("."+class_name).hide();
 }

@@ -1,5 +1,5 @@
 <!--person/time_frames partial for time frame fields; requires f builder object-->
-<%= f.text_field :representation %>
-
-<%= f.check_box :_destroy %>
-<%= f.label :_destroy, "Remove" %>
+<div class="fields">
+	<%= f.text_field :representation %>
+	<%= link_to_remove_fields "remove", f, "fields" %>
+</div>
