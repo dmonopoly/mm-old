@@ -5,6 +5,7 @@
 @import "partials/variables";
 
 .memory_block {
+  padding: 15px;
   div.content {
     font-size: 17px;
   }
@@ -20,18 +21,28 @@
 
 #memory_new, #memory_edit {
   form {
-    text-align: center;
+    div#ghost_content_area {
+      position: absolute;
+      width: $central_width;
+      height: 80px;
+      padding: 20px;
+      font-size: 40px;
+      text-align: center;
+      color: $blue;
+    }
+    
     div#content_area {
-//      position: absolute;
-      textarea {
-        height: 30px;
+      margin-top: 120px;
+      text-align: center;
+      textarea#content_text_area {
+        height: 60px;
+        font-size: 18px;
       }
     }
     
     div#time_frames_area {
-      border: 1px solid blue;
-//      position: absolute;
-//      margin-left: 500px;
+      margin-top: 25px;
+      margin-left: 50px;
       div#time_frames_form {
         div#time_frames_forms_list {
           ul#list {
@@ -55,9 +66,10 @@
 
     div#buttons {
       position: absolute;
-      margin: 350px 0 0 0;
+      margin-left: $central_width - 150px;
       input#submit_memory_button {
-        width: $central_width;
+        border: 1px solid $pleasant_gray; // border must be set somewhere or else size changes won't work
+        padding: 40px;
       }
     }
   } // end form
