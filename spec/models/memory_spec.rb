@@ -8,4 +8,6 @@ describe Memory do
   it "is valid with necessary attributes" do
     @memory.should be_valid
   end
+  
+  it "is not valid with no content"
 end

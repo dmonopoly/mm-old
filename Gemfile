@@ -27,6 +27,7 @@ group :test, :development do
 	# Helpers
 	gem 'database_cleaner'
 	gem 'factory_girl_rails' # May have to move out of group for seeds.rb
+  # gem 'minitest'
 	# gem 'forgery'
 	
 	# Core testing frameworks
@@ -35,5 +36,5 @@ group :test, :development do
 	gem 'capybara', '>= 1.0.0'
 	
   # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'turn', '< 0.8.3'#, :require => false
 end

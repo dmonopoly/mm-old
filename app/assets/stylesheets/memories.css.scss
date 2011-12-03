@@ -70,7 +70,17 @@
       input#submit_memory_button {
         border: 1px solid $pleasant_gray; // border must be set somewhere or else size changes won't work
         padding: 40px;
+        &:hover {
+          color: $link_color;
+        }
       }
     }
   } // end form
+  
+  #delete { // delete link on edit page
+    padding: 3px;
+    font-size: 10px;
+    &:hover { color: red; }
+  }
+  
 }
