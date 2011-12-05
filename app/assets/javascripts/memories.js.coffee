@@ -4,9 +4,15 @@
 
 jQuery ->
   # Alters ghost content area of form appropriately
+  proper_color = $("#ghost_content_area").css('color') # store original color of ghost text
   $("#content_text_area").keyup ->
-    text = $('textarea#content_text_area').val();
+    text = $('textarea#content_text_area').val()
     $("#ghost_content_area").html(text)
+    if text.length > 140
+      $("#ghost_content_area").css('color', 'red')
+    else
+      $("#ghost_content_area").css('color', proper_color)
+      
     
 	# Triggers for superadmin users list:
 	# Superadmin
