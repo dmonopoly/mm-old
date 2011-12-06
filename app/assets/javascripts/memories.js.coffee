@@ -12,7 +12,10 @@ jQuery ->
       $("#ghost_content_area").css('color', 'red')
     else
       $("#ghost_content_area").css('color', proper_color)
-      
+    if text.length > 130
+      $("#character_indicator").html(140-text.length)
+    else
+      $("#character_indicator").html('')
     
 	# Triggers for superadmin users list:
 	# Superadmin

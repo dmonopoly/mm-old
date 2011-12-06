@@ -38,6 +38,9 @@
         height: 60px;
         font-size: 18px;
       }
+      #character_indicator {
+        font-size: 12px;
+      }
     }
     
     div#time_frames_area {
@@ -58,9 +61,9 @@
               }
             }
             
-          }
+          } // end ul#list
         }
-      }
+      } // end time_frames_form
       
     }
 
