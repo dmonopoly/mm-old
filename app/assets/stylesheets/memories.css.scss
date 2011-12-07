@@ -51,16 +51,12 @@
           ul#list {
             display: inline-block;
             padding-left: 0;
-            li {
-              list-style-type: none;
-              div.fields { // textfield is in here
-                width: 200px;
-                
-                input {
-                }
+            div.fields { // textfield is in here
+              width: 200px;
+              
+              input {
               }
             }
-            
           } // end ul#list
         }
       } // end time_frames_form
