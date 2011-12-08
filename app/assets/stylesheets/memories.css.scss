@@ -32,7 +32,7 @@
     }
     
     div#content_area {
-      margin-top: 170px;
+      margin-top: 180px;
       text-align: center;
       textarea#content_text_area {
         width: 475px;
@@ -67,10 +67,36 @@
       position: absolute;
       margin-left: $central_width - 150px;
       input#submit_memory_button {
-        border: 1px solid $pleasant_gray; // border must be set somewhere or else size changes won't work
+//        border: 1px solid $pleasant_gray; // border must be set somewhere or else size changes won't work
         padding: 40px;
+        background: $background_color;
+//        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+//        -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+//        box-shadow:inset 0px 1px 0px 0px #ffffff;
+//        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+//        background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+//        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+//        background-color:#ededed;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border: none;
+      	display:inline-block;
+      	color:#777777;
+      	font-family:arial;
+      	font-size:15px;
+      	font-weight:bold;
+      	text-decoration:none;
+        text-shadow:1px 1px 0px #ffffff;
         &:hover {
+          border: 1px solid #dcdcdc;
+          border-top: none;
           color: $link_color;
+        	cursor: pointer;
+        }
+        &:active {
+        	position:relative;
+        	top:1px;
         }
       }
     }

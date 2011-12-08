@@ -20,28 +20,22 @@
 	<div id="header">
 		
 		<div id="inner_header" class="container">
-			<div id="left_area" class="span-22">
-				<div id="logo_area" class="span-6">
-					<%= link_to "memorymap", '/', class: "big" %>
-				</div>
-				<div id="top_left_controls" class="span-16 last">
-					<%= link_to "new memory", new_person_memory_path, class: "big" %>
-				</div>
+			<div id="left_area" class="span-8">
+				<%= link_to "m e m o r y m a p", '/', class: "faded_button" %>
 			</div>
-		
-			<div id="right_area" class="span-2 last">
-				<div id="login_area">
-					
-				</div>
-				<div id="top_right_controls">
-					<%= link_to "home", '/', class: "big" %>
-				</div>
+			
+			<div id="middle_area" class="span-8">
+				<%= link_to "+", new_person_memory_path, class: "faded_button" %>
+			</div>
+			
+			<div id="right_area" class="span-8 last">
+				<%= link_to "a c c o u n t", '/', class: "faded_button" %>
 			</div>
 		</div><!--End inner header-->
 		
 	</div>
 	
-	<div id="central" class="container"
+	<div id="central" class="container">
 			<%= yield %>
 	</div>
 

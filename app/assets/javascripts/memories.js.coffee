@@ -13,13 +13,17 @@ jQuery ->
   
   # On keyup, update the appearance accordingly
   $("#content_text_area").keyup ->
-    text = $('textarea#content_text_area').val()
+    text = $('textarea#content_text_area').val() # store text of textarea
     $("#ghost_content_area").html(text)
     if text.length > 140
-      $("#ghost_content_area").css('color', 'red')
+      $("#ghost_content_area").css('color', 'red') # change color of ghost content
+      $("#submit_memory_button").attr('disabled','disabled') # disable submit button
     else
       $("#ghost_content_area").css('color', proper_color)
-    if text.length > 130
+      $("#submit_memory_button").removeAttr('disabled')
+    
+    # Character indicator appears if user has <= 10 characters left
+    if text.length > 129
       $("#character_indicator").html(140-text.length)
     else
       $("#character_indicator").html('')

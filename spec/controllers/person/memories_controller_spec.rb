@@ -39,4 +39,8 @@ describe Person::MemoriesController do
     end
   end
   
+  describe "DELETE destroy" do
+    it "exists" do
+    end
+  end
 end

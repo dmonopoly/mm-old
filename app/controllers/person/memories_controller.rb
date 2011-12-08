@@ -37,4 +37,11 @@ class Person::MemoriesController < PersonController
       render :action => "edit"
     end
   end
+  
+  def destroy
+    @memory = Memory.find(params[:id])
+    @memory.destroy
+    flash[:notice] = 'Memory erased'
+    redirect_to :action => :index
+  end
 end
