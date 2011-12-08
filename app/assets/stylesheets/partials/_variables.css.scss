@@ -6,8 +6,8 @@
 
 // Grays & Whites -
 $faint_white: #fcfcfc; // YouTube's like button color
-$cool_gray: #ededed;
-$pleasant_gray: #ddd;
+$cool_gray: #ededed; // barely visible on your mac
+$pleasant_gray: #ddd; // used for borders
 
 // Plain - 
 $blue: #4a9ec1;
@@ -16,6 +16,7 @@ $blue: #4a9ec1;
 $background_color: white;
 $border_color: $pleasant_gray;
 $link_color: $blue;
+$text_color: darken($pleasant_gray, 45%);
 
 /* Fonts */
 $common_font: serif;
