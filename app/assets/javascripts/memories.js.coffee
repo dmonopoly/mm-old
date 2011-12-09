@@ -16,7 +16,7 @@ jQuery ->
     text = $('textarea#content_text_area').val() # store text of textarea
     $("#ghost_content_area").html(text)
     if text.length > 140
-      $("#ghost_content_area").css('color', 'red') # change color of ghost content
+      $("#ghost_content_area").css('color','red') # change color of ghost content
       $("#submit_memory_button").attr('disabled','disabled') # disable submit button
     else
       $("#ghost_content_area").css('color', proper_color)
@@ -24,9 +24,13 @@ jQuery ->
     
     # Character indicator appears if user has <= 10 characters left
     if text.length > 129
+      # $("#character_indicator").css('visibility','visible')
+      # $("#character_indicator").css('display','block')
       $("#character_indicator").html(140-text.length)
     else
-      $("#character_indicator").html('')
+      # $("#character_indicator").css('visibility','hidden')
+      # $("#character_indicator").css('display','none')
+      $("#character_indicator").html('&nbsp;')
     
 	# Triggers for superadmin users list:
 	# Superadmin

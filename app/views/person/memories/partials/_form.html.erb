@@ -9,15 +9,16 @@
 	
 	<!--Content-->
 	<div id="content_area">
-		<%= f.text_area :content, id: "content_text_area", placeholder: "What happened?" %>
+		<%= f.text_area :content, id: "content_text_area", class: "rounded", placeholder: "What happened?" %>
 		<div id="character_indicator">
-			<!--Content replaced by JS-->
+			<!--Content replaced by JS; invisible placeholder initially-->
+			&nbsp;
 		</div>
 	</div>
 
 	<!--Button Area-->
 	<div id="buttons">
-		<%= f.submit "[_]", id: "submit_memory_button" %>
+		<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
 	</div>
 	
 	<!--Time Frames-->
@@ -27,7 +28,7 @@
 				<%= f.fields_for :time_frames do |builder| %>
 					<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
 			  <% end %>
-				<%= link_to_add_fields "add time frame", f, :time_frames, "person/time_frames/partials/", ".fields" %>
+				<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
 				</ul>
 		</div>
 	</div>

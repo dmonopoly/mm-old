@@ -29,7 +29,7 @@ span.smaller_title {
 }
 
 /* Common Helpers */
-.hidden {
+.hidden { // maybe change to visibility: hidden, which hides the element but still lets it take up space
 	display: none;
 }
 a.no_line {
@@ -104,7 +104,11 @@ $form_field_width: 300px;
 	padding: 0;
 	display: inline;
 }
-
+.rounded {
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+}
 /* Buttons - http://www.cssbuttongenerator.com/ */
 // Standard button; not used anywhere, but taken and modified for particular circumstances
 .button {
@@ -136,4 +140,27 @@ $form_field_width: 300px;
 }.button:active {
 	position:relative;
 	top:1px;
+}
+
+// Used in forms
+.blank_button {
+  background: $background_color;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border: 1px solid $background_color;
+	display: inline-block;
+	color: #777777;
+	font-family: $common_font;
+	font-weight: bold;
+	text-decoration: none;
+  text-shadow: 1px 1px 0px #ffffff;
+  &:hover {
+    border: 1px solid #dcdcdc;
+  	cursor: pointer;
+  }
+  &:active {
+  	position:relative;
+  	top:1px;
+  }
 }
