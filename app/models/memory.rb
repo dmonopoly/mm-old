@@ -5,7 +5,7 @@ class Memory < ActiveRecord::Base
   accepts_nested_attributes_for :time_frames, :allow_destroy => true
   
   validates_presence_of :content
-  validates_length_of :content, :maximum => 140
+  # validates_length_of :content, :maximum => 140
   
   def time_frame_representation
     time_frames[0].representation unless time_frames[0].nil?
