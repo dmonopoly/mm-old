@@ -3,59 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  # | ----------
-  # | FORM
-  # | ----------
+  # FORM
   # Alters ghost content area of form appropriately
+  formHelper = new Application.Memory.Form
+  formHelper.prepareGhostArea() # note: currently, this is attempted all the time...
+  formHelper.updateGhostAreaOnKeyUp();
   
-  # Initialize ghost area with content already in textarea
-  try
-    text = $('textarea#content_text_area').val()
-    text = text[0..99] # first 100 characters
-    $("#ghost_content_area").html(text)
-  catch error
-    # print error
-  finally
-    # cleanUp()
-
-  # On keyup, update the appearance accordingly for starting text
-  $("#content_text_area").keyup ->
-    text = $('textarea#content_text_area').val() # store text of textarea
-    text = text[0..99]
-    $("#ghost_content_area").html(text)
-    # $("#character_indicator").html(text.length)
-
-
-  # The following was used when you limited to 140 characters.
-  #
-  # Initialize ghost area with content already in textarea
-  # text = $('textarea#content_text_area').val()
-  # $("#ghost_content_area").html(text)
-  # proper_color = $("#ghost_content_area").css('color') # store original color of ghost text
-  # 
-  # # On keyup, update the appearance accordingly
-  # $("#content_text_area").keyup ->
-  #   text = $('textarea#content_text_area').val() # store text of textarea
-  #   $("#ghost_content_area").html(text)
-  #   if text.length > 140
-  #     $("#ghost_content_area").css('color','red') # change color of ghost content
-  #     $("#submit_memory_button").attr('disabled','disabled') # disable submit button
-  #   else
-  #     $("#ghost_content_area").css('color', proper_color)
-  #     $("#submit_memory_button").removeAttr('disabled')
-  #   
-  #   # Character indicator appears if user has <= 10 characters left
-  #   if text.length > 129
-  #     # $("#character_indicator").css('visibility','visible')
-  #     # $("#character_indicator").css('display','block')
-  #     $("#character_indicator").html(140-text.length)
-  #   else
-  #     # $("#character_indicator").css('visibility','hidden')
-  #     # $("#character_indicator").css('display','none')
-  #     $("#character_indicator").html('&nbsp;')
-    
-	# Triggers for superadmin users list:
-	# Superadmin
+  # Triggers for superadmin users list:
+  # Superadmin
   # $("#manager_list_trigger").click ->
-    # $("#superadmins_list").toggle()
-	
+  #   $("#superadmins_list").toggle()
+  # 
