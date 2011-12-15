@@ -3,8 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  # Class: FORM
+  # Class: TIMELINE
   # Alters ghost content area of form appropriately
-  form = new Application.Memory.Form
-  form.prepareGhostArea() # note: currently, this is attempted all the time...
-  form.updateGhostAreaOnKeyUp()
+  # timeline = new Application.TimeFrame.Timeline
+  
+  # timeline.draw("lesssgoooooo!")
+  

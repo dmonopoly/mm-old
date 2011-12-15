@@ -1,5 +1,6 @@
 Next steps:
-focus on content! make interface more elegant... it should be inspiring
+timelines - get the dates working so you can decide the length of a time frame (fn in model)
+get form for time frames working...
 
 Remember. This must allow people to easily tell their stories.
 
@@ -17,9 +18,6 @@ Remember. This must allow people to easily tell their stories.
 
 
 Later:
-Maybe remove the "What happened?" question. You would like to use it as you think, too... to voice out your thoughts.
-Maybe make it, "Thoughts?" or "What am I thinking about?"
-Think about the "when?" too...
 flash messages?
 
 Note: none of the view specs are implemented.

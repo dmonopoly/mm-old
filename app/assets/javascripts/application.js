@@ -9,16 +9,23 @@ Organization convention for require statements below:
 1. jquery and jquery_ujs - include jquery tools
 2. initialize - dark magic to prepare JS layout: @module implementation
 3. layout - shows layout of JS modules and classes; declares static members (variables, methods)
-4. folders - each folder is a module after the standard "Application" module (e.g. memory/ means Application::Memory)
+4. folders - each folder is a MODULE after the standard "Application" module (e.g. memory/ means Application::Memory)
+    *each file in a folder is a CLASS
 5. specific files (e.g. memories.js.coffee) - these files use the classes defined in the folders
 
 javascripts/
     application.js
     initialize.js.coffee
-    layout.coffee - defines classes in general (static members)
+    layout.js.coffee - defines classes in general (static members)
     memories.js.coffee - uses things in memory/
     memory/
-        form.js.coffee - contains class implementation of Application.Memory.Form
+        form.js.coffee - class implementation of Application.Memory.Form
+    time_frames.js.coffee - uses things in time_frame
+    time_frame/
+        timeline.js.coffee - class implementation of Application.Timeline
+        
+Other conventions:
+_methodName is a private method
 */
 
 
@@ -28,7 +35,9 @@ javascripts/
 //= require initialize
 //= require layout
 //= require_tree ../javascripts/memory/
+//= require_tree ../javascripts/time_frame/
 //= require memories
+//= require time_frames
 
 
 /* The following functions are for complex forms & work with methods in application_helper.rb*/

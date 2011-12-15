@@ -1,9 +1,16 @@
 <!--person/memories/index-->
+<div id="timelines_index"> <!--detected by JS-->
+	<% TimeFrame.all.each do |time_frame| %>
+		<div id="time_frame_<%= time_frame.id %>" class="timeline" style="min-height: <%= time_frame.big_picture_length %>px">
+			.<!--invisible-->
+		</div>
+	<% end %>
+</div>
+
 <div id="memory_index">
 	<% @memories.each do |memory| %>
 		<div id="memory_<%= memory.id %>" class="memory">
 			<%= render :partial => "person/memories/partials/memory_block", :locals => { :memory => memory } %>
 		</div>
 	<% end %>
-
 </div>

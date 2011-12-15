@@ -1,4 +1,4 @@
-# Implementation of Application.Memory.Form
+# Implementation of Application.Memory.Form class
 jQuery ->
 
 @module "Application.Memory", ->

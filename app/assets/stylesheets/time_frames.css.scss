@@ -1,0 +1,13 @@
+// Place all the styles related to the time_frames controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "partials/variables";
+
+#timelines_index { // JS-related: class Timeline
+  float: right;
+  div.timeline {
+    color: $background_color; // make text invisible, just filler
+    border: 1px solid green;
+  }
+}
