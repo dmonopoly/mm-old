@@ -20,7 +20,19 @@
 }
 
 #memory_index {
+  #timelines_area { // JS-related: class Timeline
+    position: fixed;
+    left: $central_width;
+    border: 1px solid pink;
+    div.timeline {
+      color: $background_color; // make text invisible, just filler
+      border: 1px solid green;
+    }
+  }
   
+  .memory {
+    
+  }
 }
 
 #memory_show {

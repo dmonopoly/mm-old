@@ -4,10 +4,6 @@
 
 @import "partials/variables";
 
-#timelines_index { // JS-related: class Timeline
-  float: right;
-  div.timeline {
-    color: $background_color; // make text invisible, just filler
-    border: 1px solid green;
-  }
+#timeline_index {
+  // not created yet
 }

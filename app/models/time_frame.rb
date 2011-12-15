@@ -9,6 +9,6 @@ class TimeFrame < ActiveRecord::Base
   
   # Returns the number of pixels in the big picture of life for this time frame
   def big_picture_length
-    rand 300 # change later to depend on length of time
+    rand 50 # change later to depend on length of time
   end
 end

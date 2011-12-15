@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110928003002) do
+ActiveRecord::Schema.define(:version => 20111215212335) do
 
   create_table "memories", :force => true do |t|
     t.text     "content"
@@ -27,16 +27,17 @@ ActiveRecord::Schema.define(:version => 20110928003002) do
   end
 
   create_table "time_frames", :force => true do |t|
-    t.string   "type"
     t.string   "representation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "num_time_keys"
   end
 
   create_table "time_keys", :force => true do |t|
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type"
   end
 
 end
