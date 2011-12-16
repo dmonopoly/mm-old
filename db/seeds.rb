@@ -1,27 +1,95 @@
-# # This file should contain all the record creation needed to seed the database with default values.
-# # Commands:
-# # rake db:reset - drops the db, recreates the db, and loads current schema into db
-# # rake db:schema:load - BEWARE: loads current schema into db and consequently destroys all records first!
-# # rake db:seed - load seed data; defaults to development
-# # rake db:seed RAILS_ENV=test - load seed data for the test db
-# # rake db:setup - set up database by running migrations
-# # rake db:test:purge - empties the test database.
-# # rake db:test:prepare - checks for pending migrations and warns you appropriately (fails when schema DNE)
-# # rake db:test:load - recreates the test database from the current db/schema.rb
-# # rake test:units, (...) - BEWARE: test db will be erased and re-generated from your development database when you run "rake"
-# # ruby -I test test/unit/article_test.rb
-# 
-# # NOTES:
-# # -"create" calls save, whereas "create!" calls "save!"
-# #   The difference? "create!" will raise an exception if the record is invalid.
-# # -"delete" directly deletes the record, whereas "destroy" triggers callbacks like before_destroy.
-# # - Use code like :restaurant=>Restaurant.all[0] for relationships. Apparently, Restaurant.find(1) won't work.
-# # - Don't bother with Factory(:user) in seeds.rb because the password is not working. Just do User.create().
-# #   (although using it in tests is fine)
-# # - For habtm relationship specification, do things like Factory(:meal, :restaurant_ids => [ r.id ]) with
-# #   the r.id because specifying restaurant directly for some reason fails to specify the correct id
-# # ---------------------------------------------------------------------------------
-# 
+# This file should contain all the record creation needed to seed the database with default values.
+# Commands:
+# rake db:reset - drops the db, recreates the db, and loads current schema into db
+# rake db:schema:load - BEWARE: loads current schema into db and consequently destroys all records first!
+# rake db:seed - load seed data; defaults to development
+# rake db:seed RAILS_ENV=test - load seed data for the test db
+# rake db:setup - set up database by running migrations
+# rake db:test:purge - empties the test database.
+# rake db:test:prepare - checks for pending migrations and warns you appropriately (fails when schema DNE)
+# rake db:test:load - recreates the test database from the current db/schema.rb
+# rake test:units, (...) - BEWARE: test db will be erased and re-generated from your development database when you run "rake"
+# ruby -I test test/unit/article_test.rb
+
+# NOTES:
+# -"create" calls save, whereas "create!" calls "save!"
+#   The difference? "create!" will raise an exception if the record is invalid.
+# -"delete" directly deletes the record, whereas "destroy" triggers callbacks like before_destroy.
+# - Use code like :restaurant=>Restaurant.all[0] for relationships. Apparently, Restaurant.find(1) won't work.
+# - Don't bother with Factory(:user) in seeds.rb because the password is not working. Just do User.create().
+#   (although using it in tests is fine)
+# ---------------------------------------------------------------------------------
+
+# Memories
+Memory.find_or_create_by_content(:content => "I learned some Ruby / Rails stuff from Radar plus some about Radar's background.")
+Memory.find_or_create_by_content(:content => "Twitter changed its design. It's really nice now - especially with the keyboard shortcuts, like g u to go to a user.")
+Memory.find_or_create_by_content(:content => "I created the concept of vertical, multiple timelines in memorymap.")
+
+puts "---found or created memories"
+
+# Time Frames
+# 1 per memory, for each day
+TimeFrame.find_or_create_by_representation("12/15/2011") # 0
+TimeFrame.find_or_create_by_representation("12/13/2011") # 1
+TimeFrame.find_or_create_by_representation("12/11/2011") # 2
+# More general
+TimeFrame.find_or_create_by_representation("Semester 1 at USC") # 3
+TimeFrame.find_or_create_by_representation("Schooling Years") # 4
+
+puts "---found or created time frames"
+
+# MemoryTimeFrames
+if MemoryTimeFrame.count == 0
+  0.upto(2) do |i| # 3 memories
+    if i == 0
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[0].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[3].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[4].id)
+    elsif i == 1
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[1].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[3].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[4].id)
+    elsif i == 2
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[2].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[3].id)
+      MemoryTimeFrame.create(:memory_id => Memory.all[i].id, :time_frame_id => TimeFrame.all[4].id)
+    else
+      puts "=("
+    end
+  end
+  puts "---created memory time frames"
+else
+  puts "---memory time frames already exist"
+end
+
+# TimeKeys
+if TimeKey.count == 0
+  one = 1
+  two = 2
+  0.upto(4) do |i| # 5 time frames
+    if i==0
+      # WHY IS TYPE NIL? MODEL TEST FAILS... ALTHOUGH IT IS A NUMBER... I THINK
+      TimeKey.create!(:date => Date.parse('15-12-2011'), :type => one, :time_frame_id => i)
+    elsif i==1
+      TimeKey.create!(:date => Date.parse('13-12-2011'), :type => one, :time_frame_id => i)
+    elsif i==2
+      TimeKey.create(:date => Date.parse('11-12-2011'), :type => one, :time_frame_id => i)
+    elsif i==3
+      TimeKey.create(:date => Date.parse('20-8-2011'), :type => two, :time_frame_id => i)
+      TimeKey.create(:date => Date.parse('15-12-2011'), :type => two, :time_frame_id => i)
+    elsif i==4
+      TimeKey.create(:date => Date.parse('1-8-1999'), :type => two, :time_frame_id => i)
+      TimeKey.create(:date => Date.parse('15-12-2011'), :type => two, :time_frame_id => i)
+    else
+      puts "??? =("
+    end
+  end
+  puts "---created time keys"
+else
+  puts "---time keys already exist"
+end
+
+
 # ## Creating the organizations; must have at least 2 for proceeding code to work
 # [ "USC", "UCLA" ].each do |organization_name|
 #   Organization.find_or_create_by_name(organization_name)
