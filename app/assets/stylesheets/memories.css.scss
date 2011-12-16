@@ -20,18 +20,21 @@
 }
 
 #memory_index {
-  #timelines_area { // JS-related: class Timeline
+  #timelines {
     position: fixed;
-    left: $central_width;
-    border: 1px solid pink;
+    left: $central_width+100;
     div.timeline {
-      color: $background_color; // make text invisible, just filler
-      border: 1px solid green;
+      display: inline-block;
+      color: $background_color; // make text invisible so it's just filler
+      border-left: 1px solid green;
+      width: 1px;
     }
   }
   
-  .memory {
+  #memories {
+    .memory {
     
+    }
   }
 }
 

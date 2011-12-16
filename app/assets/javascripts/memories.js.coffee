@@ -8,3 +8,5 @@ jQuery ->
   form = new Application.Memory.Form
   form.prepareGhostArea() # note: currently, this is attempted all the time...
   form.updateGhostAreaOnKeyUp()
+    
+  # alert $("#timelines").css("z-index")+" | "+$("#memories").css("z-index")

@@ -12,6 +12,8 @@ gem 'dynamic_form', '1.1.4' # easy error messages for forms
 # gem 'paperclip' # for file attachment
 # gem 'rmagick' # supplements paperclip for imagemagick-related things
 
+gem 'dotiw' # distance of time in words, more accurate & elegant implementation by Radar
+
 # Maybe delete this? "Temporary - 3.1 SHOULD require >=0.9.2, but there are still bugs"
 # gem 'rake', '0.8.7'
 
