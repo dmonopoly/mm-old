@@ -4,6 +4,6 @@ class RemoveNumTimeKeysFromTimeFrames < ActiveRecord::Migration
   end
 
   def down
-    add_column :time_frames, :num_time_keys, :int
+    add_column :time_frames, :num_time_keys, :integer
   end
 end
