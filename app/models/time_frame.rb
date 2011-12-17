@@ -23,6 +23,8 @@ class TimeFrame < ActiveRecord::Base
     elsif time_keys.count == 2
       number_of_seconds_in_a_lifetime = 2325000000 # 31,000,000 seconds per year * 75 years of life
       difference(time_keys.first.date,time_keys.second.date)/number_of_seconds_in_a_lifetime
+    else
+      0
     end
   end
   

@@ -64,25 +64,47 @@ end
 
 # TimeKeys
 if TimeKey.count == 0
-  one = 1
-  two = 2
   0.upto(4) do |i| # 5 time frames
     if i==0
-      # WHY IS TYPE NIL? MODEL TEST FAILS... ALTHOUGH IT IS A NUMBER... I THINK
-      TimeKey.create!(:date => Date.parse('15-12-2011'), :type => one, :time_frame_id => i)
+      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==1
-      TimeKey.create!(:date => Date.parse('13-12-2011'), :type => one, :time_frame_id => i)
+      TimeKey.new(:date => Date.parse('13-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==2
-      TimeKey.create(:date => Date.parse('11-12-2011'), :type => one, :time_frame_id => i)
+      TimeKey.new(:date => Date.parse('11-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==3
-      TimeKey.create(:date => Date.parse('20-8-2011'), :type => two, :time_frame_id => i)
-      TimeKey.create(:date => Date.parse('15-12-2011'), :type => two, :time_frame_id => i)
+      TimeKey.new(:date => Date.parse('20-8-2011'), :time_frame_id => i, :category => 2)
+      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
     elsif i==4
-      TimeKey.create(:date => Date.parse('1-8-1999'), :type => two, :time_frame_id => i)
-      TimeKey.create(:date => Date.parse('15-12-2011'), :type => two, :time_frame_id => i)
+      TimeKey.new(:date => Date.parse('1-8-1999'), :time_frame_id => i, :category => 2)
+      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
     else
       puts "??? =("
     end
+  # one = 1
+  #   two = 2
+  #   0.upto(4) do |i| # 5 time frames
+  #     if i==0
+  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
+  #       t.category=one; t.save!
+  #     elsif i==1
+  #       t=TimeKey.new(:date => Date.parse('13-12-2011'), :time_frame_id => i)
+  #       t.category=one; t.save!
+  #     elsif i==2
+  #       t=TimeKey.new(:date => Date.parse('11-12-2011'), :time_frame_id => i)
+  #       t.category=one; t.save!
+  #     elsif i==3
+  #       t=TimeKey.new(:date => Date.parse('20-8-2011'), :time_frame_id => i)
+  #       t.category=two; t.save!
+  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
+  #       t.category=two; t.save!
+  #     elsif i==4
+  #       t=TimeKey.new(:date => Date.parse('1-8-1999'), :time_frame_id => i)
+  #       t.category=two; t.save!
+  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
+  #       t.category=two; t.save!
+  #     else
+  #       puts "??? =("
+  #     end
   end
   puts "---created time keys"
 else

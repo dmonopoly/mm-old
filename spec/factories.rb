@@ -6,6 +6,10 @@ Factory.define :memory do |t|
 end
 
 Factory.define :time_frame do |t|
-  # t.type
   # t.representation
+end
+
+Factory.define :time_key do |t|
+  t.category { 1 } # 1 or 2
+  t.date Date.today
 end
