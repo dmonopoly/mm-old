@@ -66,17 +66,17 @@ end
 if TimeKey.count == 0
   0.upto(4) do |i| # 5 time frames
     if i==0
-      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 1)
+      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==1
-      TimeKey.new(:date => Date.parse('13-12-2011'), :time_frame_id => i, :category => 1)
+      TimeKey.create(:date => Date.parse('13-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==2
-      TimeKey.new(:date => Date.parse('11-12-2011'), :time_frame_id => i, :category => 1)
+      TimeKey.create(:date => Date.parse('11-12-2011'), :time_frame_id => i, :category => 1)
     elsif i==3
-      TimeKey.new(:date => Date.parse('20-8-2011'), :time_frame_id => i, :category => 2)
-      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
+      TimeKey.create(:date => Date.parse('20-8-2011'), :time_frame_id => i, :category => 2)
+      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
     elsif i==4
-      TimeKey.new(:date => Date.parse('1-8-1999'), :time_frame_id => i, :category => 2)
-      TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
+      TimeKey.create(:date => Date.parse('1-8-1999'), :time_frame_id => i, :category => 2)
+      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => i, :category => 2)
     else
       puts "??? =("
     end

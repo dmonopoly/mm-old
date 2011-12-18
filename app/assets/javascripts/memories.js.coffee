@@ -9,4 +9,6 @@ jQuery ->
   form.prepareGhostArea() # note: currently, this is attempted all the time...
   form.updateGhostAreaOnKeyUp()
     
-  # alert $("#timelines").css("z-index")+" | "+$("#memories").css("z-index")
+  # Set height of "life" time frame on memories index
+  height = `$(document).height()`
+  $('#life_time_frame').css('height', height-50 + 'px');
