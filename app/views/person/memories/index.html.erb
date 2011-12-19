@@ -4,6 +4,9 @@
 	<div id="timelines">
 		<% TimeFrame.all.sort.each do |time_frame| %>
 			<div id="time_frame_<%= time_frame.id %>" class="timeline" style="min-height: <%= time_frame.big_picture_length %>px">
+				<% time_frame.memories.each do |m| %>
+					m.id. then get the ids here, and see if this string contains the memory's id. if so, highlight!
+				<% end %>
 				.<!--invisible-->
 			</div>
 		<% end %>
@@ -12,6 +15,7 @@
 		</div>
 	</div>
 	
+	<!--memory.time_frames.each?-->
 	<div id="memories">
 		<% @memories.each do |memory| %>
 			<div id="memory_<%= memory.id %>" class="memory">

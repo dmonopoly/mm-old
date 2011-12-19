@@ -1,6 +1,8 @@
 class Person::MemoriesController < PersonController
   def index
-    @memories = Memory.all
+    @memories = Memory.find(:all, :include => {:memory_time_frames => :time_frame})
+    # @memory = Memory.all
+    # @productions = Production.find(:all, ... , :include => {:runs => :venue})
   end
   
   def new

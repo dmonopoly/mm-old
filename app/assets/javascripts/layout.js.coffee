@@ -11,8 +11,3 @@
     class @Timeline
       info: "draw()"
   
-      # Triggers for superadmin users list:
-      # Superadmin
-      # $("#manager_list_trigger").click ->
-      #   $("#superadmins_list").toggle()
-      #

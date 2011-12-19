@@ -25,6 +25,7 @@
     left: $central_width+100;
     div.timeline {
       display: inline-block;
+//      visibility: hidden;
       color: $background_color; // make text invisible so it's just filler
       border-left: 1px solid green;
       width: 1px;

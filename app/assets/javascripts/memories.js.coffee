@@ -12,3 +12,21 @@ jQuery ->
   # Set height of "life" time frame on memories index
   height = `$(document).height()`
   $('#life_time_frame').css('height', height-50 + 'px');
+  
+  # Set toggle of time frames
+  # $(".memory").hover ->
+  #   memory = $(this).attr('id')
+  #   id = memory.split('_')[1] # get id of e.g. memory_4
+  #   #find memory
+  #     time_frames = <% Memory.find(id).time_frames %>
+  #   for time_frame in time_frames
+  #     tf_id = time_frame.id
+  #     $("#"+tf_id).toggle()
+  
+  # $(this).fadeOut(100);$(this).fadeIn(500)
+  
+  # Triggers for superadmin users list:
+  # Superadmin
+  # $("#manager_list_trigger").click ->
+  #   $("#superadmins_list").toggle()
+  #
