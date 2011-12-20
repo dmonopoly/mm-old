@@ -8,12 +8,12 @@ jQuery ->
   form = new Application.Memory.Form
   form.prepareGhostArea() # note: currently, this is attempted all the time...
   form.updateGhostAreaOnKeyUp()
-    
-  # Set height of "life" time frame on memories index
-  height = `$(document).height()`
-  $('#life_time_frame').css('height', height-50 + 'px');
   
-  # Set toggle of time frames
+  # Class: INDEX
+  index = new Application.Memory.Index
+  index.setHeightOfLifeTimeFrame()
+  index.setTimeFrameToggleOnHover()
+    
   # $(".memory").hover ->
   #   memory = $(this).attr('id')
   #   id = memory.split('_')[1] # get id of e.g. memory_4

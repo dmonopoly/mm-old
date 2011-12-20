@@ -5,9 +5,6 @@
   @module "Memory", ->
     class @Form # so you can do formHelper = new Application.Memory.Form
       info: "prepareGhostArea(), updateGhostAreaOnKeyUp()"
-
-  # not used...
-  @module "TimeFrame", ->
-    class @Timeline
-      info: "draw()"
-  
+    
+    class @Index
+      info: "setHeightOfLifeTimeFrame(), setTimeFrameToggleOnHover()"

@@ -20,12 +20,12 @@ javascripts/
     memories.js.coffee - uses things in memory/
     memory/
         form.js.coffee - class implementation of Application.Memory.Form
+        index.js.coffee
     time_frames.js.coffee - uses things in time_frame
     time_frame/
-        timeline.js.coffee - class implementation of Application.Timeline
         
 Other conventions:
-_methodName is a private method
+_methodName is a private method in a js.coffee file
 */
 
 
