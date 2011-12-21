@@ -22,13 +22,14 @@
 #memory_index {
   #timelines {
     position: fixed;
-    left: $central_width+100;
+    left: $central_width+50;
     div.timeline {
+      div.keys {
+        display: none;
+      }
       display: inline-block;
-//      visibility: hidden;
-      color: $background_color; // make text invisible so it's just filler
-      border-left: 1px solid green;
-      width: 1px;
+      border-left: 1px solid orange;
+      width: 15px;
     }
   }
   

@@ -35,7 +35,6 @@ _methodName is a private method in a js.coffee file
 //= require initialize
 //= require layout
 //= require_tree ../javascripts/memory/
-//= require_tree ../javascripts/time_frame/
 //= require memories
 //= require time_frames
 

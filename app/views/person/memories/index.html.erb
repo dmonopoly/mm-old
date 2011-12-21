@@ -3,15 +3,15 @@
 	
 	<div id="timelines">
 		<% TimeFrame.all.sort.each do |time_frame| %>
-			<div id="time_frame_<%= time_frame.id %>" class="timeline" style="min-height: <%= time_frame.big_picture_length %>px">
-				<div class="hidden_keys">
-					<%= time_frame.memory_ids %>
-					<!--then get the ids here, and see if this string contains the memory's id. if so, highlight!-->
-				</div>
-				<!--invisible-->
+			<div title="<%= time_frame.representation %>" id="time_frame_<%= time_frame.id %>" class="timeline my_border" 
+				style="margin-top: <%= time_frame.big_picture_offset %>px; min-height:<%= time_frame.big_picture_length %>px; display:none">
+				
+				<div class="keys"><%= time_frame.memory_ids %></div>
+				
 			</div>
 		<% end %>
-		<div id="life_time_frame" class="timeline">
+		
+		<div id="life_time_frame" class="timeline" style="display:none">
 			.
 		</div>
 	</div>

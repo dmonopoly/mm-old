@@ -10,34 +10,46 @@ jQuery ->
     
     # On keyup, update the appearance accordingly for starting text
     setTimeFrameToggleOnHover: ->
-      # Set toggle of time frames upon memory hover
-      $(".memory").hover ->
-        $(this).css('border', '1px solid red')
-
-        _toggleLifeTimeFrame()
-        id = _getMemoryId() # Get id of e.g. memory_3
+      try
+        # Set toggle of time frames upon memory hover
+        $(".memory").hover ->
+          that = $(this)
+          # that.css('border', '1px solid red')
         
-        # Cycle through all .timeline
-        $(".timeline").each ->
-          memory_ids = _getMemoryIdsOfTimeFrame()
+          # Toggle life time frame, which must be done every time
+          $("#life_time_frame").stop(true, true).fadeToggle()
           
-          # Toggle timelines if the timeline contains the memory id for the memory that is hovered over
-          for m_id in memory_ids
-            if m_id == id
-              $(this).toggle('slow')
-              # $(this).fadeIn(500)
-              
-    _toggleLifeTimeFrame: ->
-      # $("#life_time_frame").fadeIn(500)
-      $("#life_time_frame").toggle('slow')
-      
-    _getMemoryId: ->
-      memory = $(this).attr('id')
-      return memory.split('_')[1]
-    
-    # Memory ids of time frame
-    _getMemoryIdsTimeFrame: ->
-      # Get string of memory ids, like [1, 4, 5].. try $(this).children().html()
-      keys = $(this).html()
-      keys = keys[1..-2] # 1, 4, 5
-      memory_ids = keys.split(', ')
+          # Get id of e.g. memory_3
+          memory = that.attr('id')
+          id = memory.split('_')[1]
+          
+          # stop = false
+          
+          # Cycle through all keys
+          $(".keys").each ->
+            # alert "id of timeline: " + $(this).parent().attr('id')
+            
+            # Get string of memory ids, like [1, 4, 5]
+            keys = $(this).html()
+            
+            # alert "raw keys|"+keys+"|"
+          
+            keys = keys[1..-2] # 1, 4, 5
+          
+            # alert "keys after bracket removal|"+keys+"|"
+          
+            memory_ids = keys.split(', ')
+            memory_ids = memory_ids
+          
+            # unless stop
+              # alert "memory_ids|"+memory_ids+"|"
+            # stop = true
+          
+            # Toggle timelines if the timeline contains the memory id for the memory that is hovered over
+            for m_id in memory_ids
+              if m_id == id
+                $(this).parent().stop(true, true).fadeToggle()
+      catch error
+        # catch the error
+      finally
+        # wrap up
