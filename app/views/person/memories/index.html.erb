@@ -3,15 +3,15 @@
 	
 	<div id="timelines">
 		<% TimeFrame.all.sort.each do |time_frame| %>
-			<div title="<%= time_frame.representation %>" id="time_frame_<%= time_frame.id %>" class="timeline my_border" 
-				style="margin-top: <%= time_frame.big_picture_offset %>px; min-height:<%= time_frame.big_picture_length %>px; display:none">
+			<div title="<%= time_frame.representation %>" id="time_frame_<%= time_frame.id %>_<%= time_frame.length %>" class="timeline" 
+				style="display:none">
 				
 				<div class="keys"><%= time_frame.memory_ids %></div>
-				
+				<div class="length">
 			</div>
 		<% end %>
 		
-		<div id="life_time_frame" class="timeline" style="display:none">
+		<div id="life_time_frame" class="life_timeline" style="display:none">
 			.
 		</div>
 	</div>

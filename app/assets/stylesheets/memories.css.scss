@@ -23,7 +23,7 @@
   #timelines {
     position: fixed;
     left: $central_width+50;
-    div.timeline {
+    div.timeline, div.life_timeline {
       div.keys {
         display: none;
       }

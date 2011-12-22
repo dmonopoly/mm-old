@@ -7,4 +7,4 @@
       info: "prepareGhostArea(), updateGhostAreaOnKeyUp()"
     
     class @Index
-      info: "setHeightOfLifeTimeFrame(), setTimeFrameToggleOnHover()"
+      info: "setTimeFrameHeights(), setTimeFrameOffsets(), setTimeFrameToggleOnHover()"

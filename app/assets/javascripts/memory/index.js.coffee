@@ -3,10 +3,30 @@ jQuery ->
 
 @module "Application.Memory", ->
   class @Index
-    # Needed because the height depends on window size
-    setHeightOfLifeTimeFrame: ->
-      height = `$(document).height()`
-      $('#life_time_frame').css('height', height-50 + 'px');
+    # Set heights
+    setTimeFrameHeights: ->
+      life_height = `$(document).height()`-50 # useful constant; depends on document's height
+      
+      # Life time frame
+      $('#life_time_frame').css('height', life_height + 'px');
+      
+      # Other time frames
+      
+      #TODO:
+      $(".timeline").each ->
+        time_length = $(this).attr('id').split('_')[3] # get time lengths in seconds of time frames
+        life_factor = life_height/seconds_lived # useful factor for calculation
+        # RIGHT ABOVE HERE GET SECONDS LIVED
+        height = life_factor * time_length
+        if height > 10 # check this
+          $(this).css('height', height)
+        else
+          $(this).css('height', 0) # too small to be seen
+      
+      
+    # Set vertical offsets (margin top)
+    setTimeFrameOffsets: ->
+      life_height = `$(document).height()`-50 # useful constant; depends on document's height
     
     # On keyup, update the appearance accordingly for starting text
     setTimeFrameToggleOnHover: ->

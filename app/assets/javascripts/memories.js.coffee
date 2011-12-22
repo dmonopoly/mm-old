@@ -11,9 +11,10 @@ jQuery ->
   
   # Class: INDEX
   index = new Application.Memory.Index
-  index.setHeightOfLifeTimeFrame()
+  index.setTimeFrameHeights()
+  index.setTimeFrameOffsets()
   index.setTimeFrameToggleOnHover()
-    
+  
   # $(".memory").hover ->
   #   memory = $(this).attr('id')
   #   id = memory.split('_')[1] # get id of e.g. memory_4
