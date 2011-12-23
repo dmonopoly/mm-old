@@ -1,6 +1,5 @@
 Next steps:
-timelines - get the dates working so you can decide the length of a time frame (fn in model)
-get form for time frames working...
+time frames...
 
 Remember. This must allow people to easily tell their stories.
 
@@ -16,6 +15,7 @@ Remember. This must allow people to easily tell their stories.
 
 
 Later:
+fix seconds lived in index.js.coffee
 flash messages?
 
 Note: none of the view specs are implemented.

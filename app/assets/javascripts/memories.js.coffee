@@ -11,8 +11,7 @@ jQuery ->
   
   # Class: INDEX
   index = new Application.Memory.Index
-  index.setTimeFrameHeights()
-  index.setTimeFrameOffsets()
+  index.setTimeFrameAppearance()
   index.setTimeFrameToggleOnHover()
   
   # $(".memory").hover ->

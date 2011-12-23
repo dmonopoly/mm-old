@@ -24,12 +24,12 @@
     position: fixed;
     left: $central_width+50;
     div.timeline, div.life_timeline {
-      div.keys {
-        display: none;
-      }
+      div.keys { display: none; }
+      float: left;
+      margin: 0 2px;
       display: inline-block;
-      border-left: 1px solid orange;
-      width: 15px;
+      background: orange;
+      width: 1px;
     }
   }
   
