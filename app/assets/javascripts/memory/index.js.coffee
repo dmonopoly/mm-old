@@ -72,3 +72,13 @@ jQuery ->
         # catch the error
       finally
         # wrap up
+        
+    # Makes a memory block change nicely upon hover
+    setMemoryHoverAction: ->
+      $(".memory").hover ->
+        that = $(this)
+        # that.stop(true, true).toggle ->
+        #     that.css({borderLeft: "1px solid green"});
+        # }, function() {
+        #     that.css({borderLeft: "1px solid gray"});
+        # });

@@ -13,6 +13,7 @@ jQuery ->
   index = new Application.Memory.Index
   index.setTimeFrameAppearance()
   index.setTimeFrameToggleOnHover()
+  index.setMemoryHoverAction()
   
   # $(".memory").hover ->
   #   memory = $(this).attr('id')
