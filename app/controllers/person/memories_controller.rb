@@ -8,19 +8,25 @@ class Person::MemoriesController < PersonController
   def new
     @memory = Memory.new
     1.times { @memory.time_frames.build }
+    # if session[:previous_memory_id]
+    #   @previous_memory = session[:previous_memory_id]
+    #   @previous_memory.time_frames.count.times { @memory.time_frames.build }
+    # else
+    #   1.times { @memory.time_frames.build }
+    # end
   end
   
   def create
     @memory = Memory.new(params[:memory])
-    
-    # Save time frame fields for next creation
-    # session[:time_frames] = params[:memory][:time_frames_attributes] ?
-    # be sure to prevent time frames from being created if they're representations are empty
-    
+    # session[:previous_memory_id] = @memory.id
     if @memory.save
       flash[:notice] = "New memory saved"
-      # redirect_to [:person, @memory]
-      redirect_to :action => :new
+      # Remove time frames that are ""
+      @memory.time_frames.each do |tf|
+        tf.destroy if tf.representation.strip == ""
+      end
+      
+      redirect_to :action => :new # redirect_to [:person, @memory]
     else
       render :action => :new
     end

@@ -35,12 +35,11 @@
 		
 	</div>
 	
-	<%# if flash[:notice] %>
+	<% if flash[:notice] %>
 	<div id="flashes">
-		<%#= flash[:notice] %>
-		I will disappear.
+		<%= flash[:notice] %>
 	</div>
-	<%# end %>
+	<% end %>
 	
 	<div id="central" class="container">
 		<%= yield %>
