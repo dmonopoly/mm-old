@@ -21,3 +21,15 @@ jQuery ->
         text = text[0..99]
         $("#ghost_content_area").html(text)
         # $("#character_indicator").html(text.length)
+    
+    # Prepares jQuery's datepicker widget for time frame fields  
+    setDatePicker: ->
+      # First time
+      $(".time_frame_field").datepicker {
+          constrainInput: false
+        }
+      # Ensure new fields get date picker
+      $("#add_time_frame").live "click", -> # now & in the future
+        $(".time_frame_field").datepicker {
+            constrainInput: false
+          }

@@ -18,12 +18,13 @@ class TimeFrame < ActiveRecord::Base
   # Returns the length in days of the time frame
   # Can use TimeFrame.all.sort_by(&:length) in views
   # time_keys.count should be 0, 1, or 2
+  # 0 if no time keys
   def length
     if time_keys.count > 0
       if time_keys.count == 1
         1
       elsif time_keys.count == 2
-        difference(time_keys.first.date,time_keys.second.date)
+        difference(time_keys.first.date, time_keys.second.date)
       else
         throw "Oh hello there. Something happened. Remain calm... (length)"
         0
@@ -36,6 +37,8 @@ class TimeFrame < ActiveRecord::Base
     end
   end
   
+  # Returns the number of days between the latest date of the time frame and today
+  # 0 if no time keys
   def days_ago
     (Date.today.to_datetime - latest_date.to_datetime).to_i
   end

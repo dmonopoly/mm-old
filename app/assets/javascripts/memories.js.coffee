@@ -8,12 +8,13 @@ jQuery ->
   form = new Application.Memory.Form
   form.prepareGhostArea() # note: currently, this is attempted all the time...
   form.updateGhostAreaOnKeyUp()
+  form.setDatePicker()
   
   # Class: INDEX
   index = new Application.Memory.Index
   index.setTimeFrameAppearance()
   index.setTimeFrameToggleOnHover()
-  index.setMemoryHoverAction()
+  index.setMemoryHoverAction() # not used
   
   # $(".memory").hover ->
   #   memory = $(this).attr('id')

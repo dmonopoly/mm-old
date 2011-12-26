@@ -31,49 +31,30 @@ jQuery ->
       try
         # Set toggle of time frames upon memory hover
         $(".memory").hover ->
-          that = $(this)
-          # that.css('border', '1px solid red')
-        
           # Toggle life time frame, which must be done every time
           $("#life_time_frame").stop(true, true).fadeToggle()
           
           # Get id of e.g. memory_3
-          memory = that.attr('id')
+          memory = $(this).attr('id')
           id = memory.split('_')[1]
-          
-          # stop = false
           
           # Cycle through all keys
           $(".keys").each ->
-            # alert "id of timeline: " + $(this).parent().attr('id')
-            
-            # Get string of memory ids, like [1, 4, 5]
-            keys = $(this).html()
-            
-            # alert "raw keys|"+keys+"|"
+            keys = $(this).html() # Get string of memory ids, like [1, 4, 5]
+            unless keys.empty
+              keys = keys[1..-2] # Get 1, 4, 5
+              memory_ids = keys.split(', ') # Make array
           
-            keys = keys[1..-2] # 1, 4, 5
-          
-            # alert "keys after bracket removal|"+keys+"|"
-          
-            memory_ids = keys.split(', ')
-            memory_ids = memory_ids
-          
-            # unless stop
-              # alert "memory_ids|"+memory_ids+"|"
-            # stop = true
-          
-            # Toggle timelines if the timeline contains the memory id for the memory that is hovered over
-            for m_id in memory_ids
-              if m_id == id
-                $(this).parent().stop(true, true).fadeToggle('fast')
-                
+              # Toggle timelines if the timeline contains the memory id for the memory that is hovered over
+              for m_id in memory_ids
+                if m_id == id
+                  $(this).parent().stop(true, true).fadeToggle()
       catch error
         # catch the error
       finally
         # wrap up
         
-    # Makes a memory block change nicely upon hover
+    # Makes a memory block change nicely upon hover - not done
     setMemoryHoverAction: ->
       $(".memory").hover ->
         that = $(this)
