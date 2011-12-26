@@ -23,6 +23,10 @@ javascripts/
         index.js.coffee
     time_frames.js.coffee - uses things in time_frame
     time_frame/
+        ...
+    misc.js.coffee - uses things in misc/
+    misc/
+        flash.js.coffee
         
 Other conventions:
 _methodName is a private method in a js.coffee file
@@ -33,11 +37,13 @@ _methodName is a private method in a js.coffee file
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require initialize
+//= require darkmagic
 //= require layout
 //= require_tree ../javascripts/memory/
+//= require_tree ../javascripts/misc/
 //= require memories
 //= require time_frames
+//= require misc
 
 
 /* The following functions are for complex forms & work with methods in application_helper.rb*/

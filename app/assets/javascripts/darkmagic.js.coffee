@@ -1,4 +1,4 @@
-# Dark magic to prepare JS layout: @module implementation
+# Dark magic to prepare JS layout (@module implementation)
 
 @module = (names, fn) ->
   names = names.split '.' if typeof names is 'string'

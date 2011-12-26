@@ -50,16 +50,18 @@ body {
 		}
 	}
 	
-	#flash {
+	#flashes {
+	  position: absolute;
+	  width: 100%;
     text-align: center;
-	  background: $pale_yellow;
-	  
+    font: 15px $common_font; // e.g. italic bold 12px/30px serif
+	  background: $pale_blue;
 	}
 	
 	// Primary content
 	#central {
+	  margin-top: 10px;
 	  min-height: 500px;
-	  
 	}
 	
 	// Footer
