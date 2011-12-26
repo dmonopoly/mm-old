@@ -15,8 +15,7 @@ Remember. This must allow people to easily tell their stories.
 
 
 Later:
-fix seconds lived in index.js.coffee
-flash messages?
+fix days lived in index.js.coffee to specific user
 
 Note: none of the view specs are implemented.
 

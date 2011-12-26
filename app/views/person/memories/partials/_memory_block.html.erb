@@ -1,7 +1,7 @@
 <!--person/memories/partials/_memory_block; requires variable 'memory'-->
 <div class="memory_block">
 	<div class="content">
-		<%= simple_format memory.content %>
+		<%= link_to simple_format(memory.content), [:person, memory] %>
 	</div>
 	<div class="time_frame">
 		<%= memory.time_frame_representation %> <!--not set up properly yet-->

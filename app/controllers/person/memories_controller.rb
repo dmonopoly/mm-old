@@ -13,9 +13,14 @@ class Person::MemoriesController < PersonController
   def create
     @memory = Memory.new(params[:memory])
     
+    # Save time frame fields for next creation
+    # session[:time_frames] = params[:memory][:time_frames_attributes] ?
+    # be sure to prevent time frames from being created if they're representations are empty
+    
     if @memory.save
       flash[:notice] = "New memory saved"
-      redirect_to [:person, @memory]
+      # redirect_to [:person, @memory]
+      redirect_to :action => :new
     else
       render :action => :new
     end

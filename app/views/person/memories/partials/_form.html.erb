@@ -24,12 +24,12 @@
 	<!--Time Frames-->
 	<div id="time_frames_area">
 		<div id="time_frames_form">
-				<ul id="list">
-				<%= f.fields_for :time_frames do |builder| %>
-					<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
-			  <% end %>
-				<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
-				</ul>
+			<ul id="list">
+			<%= f.fields_for :time_frames do |builder| %>
+				<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
+		  <% end %>
+			<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
+			</ul>
 		</div>
 	</div>
 	
