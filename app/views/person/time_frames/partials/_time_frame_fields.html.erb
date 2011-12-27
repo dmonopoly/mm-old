@@ -2,4 +2,16 @@
 <div class="fields">
 	<%= f.text_field :representation, class: "time_frame_field rounded", placeholder: "When?", autocomplete: "off" %>
 	<%= link_to_remove_fields "X", f, "fields", class: "blank_button x" %>
+
+	<!--JS updates the following appropriately-->
+	<div class="time_key_fields">
+		<%= f.fields_for :time_keys do |builder| %>
+			<%= render :partial => "person/time_keys/partials/time_key_fields", :locals => { :f => builder } %>
+	  <% end %>
+	</div>
+	
+	<%= f.text_field :first_date, class: "time_key_field" %>
+	<%= f.check_box :first_date_type %>
+	<%= f.text_field :second_date, class: "time_key_field" %>
+	<%= f.check_box :second_date_type %>
 </div>

@@ -29,14 +29,22 @@ puts "---found or created memories"
 
 # Time Frames
 # 1 per memory, for each day
-TimeFrame.find_or_create_by_representation("12/15/2011") # 0
-TimeFrame.find_or_create_by_representation("12/13/2011") # 1
-TimeFrame.find_or_create_by_representation("12/11/2011") # 2
-# More general
-TimeFrame.find_or_create_by_representation("Semester 1 at USC") # 3
-TimeFrame.find_or_create_by_representation("Schooling Years") # 4
-
-puts "---found or created time frames"
+if TimeFrame.count == 0
+  TimeFrame.create(:representation => "12/15/2011", :first_date_type=>1,
+                    :first_date => Date.parse('15-12-2011')) # 0
+  TimeFrame.create(:representation => "12/13/2011", :first_date_type=>1,
+                    :first_date => Date.parse('13-12-2011')) # 1
+  TimeFrame.create(:representation => "12/11/2011", :first_date_type=>1,
+                    :first_date => Date.parse('11-12-2011')) # 2
+  # More general
+  TimeFrame.create(:representation => "Semester 1 at USC", :first_date_type=>2, :second_date_type=>2,
+                    :first_date => Date.parse('20-8-2011'), :second_date => Date.parse('15-12-2011')) # 3
+  TimeFrame.create(:representation => "Schooling Years", :first_date_type=>2, :second_date_type=>2,
+                    :first_date => Date.parse('1-8-1999'), :second_date => Date.parse('15-12-2011')) # 4
+  puts "---created time frames"
+else
+  puts "---time frames already exist"
+end
 
 # MemoryTimeFrames
 if MemoryTimeFrame.count == 0
@@ -60,55 +68,6 @@ if MemoryTimeFrame.count == 0
   puts "---created memory time frames"
 else
   puts "---memory time frames already exist"
-end
-
-# TimeKeys
-if TimeKey.count == 0
-  0.upto(4) do |i| # 5 time frames
-    if i==0
-      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 1)
-    elsif i==1
-      TimeKey.create(:date => Date.parse('13-12-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 1)
-    elsif i==2
-      TimeKey.create(:date => Date.parse('11-12-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 1)
-    elsif i==3
-      TimeKey.create(:date => Date.parse('20-8-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 2)
-      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 2)
-    elsif i==4
-      TimeKey.create(:date => Date.parse('1-8-1999'), :time_frame_id => TimeFrame.all[i].id, :category => 2)
-      TimeKey.create(:date => Date.parse('15-12-2011'), :time_frame_id => TimeFrame.all[i].id, :category => 2)
-    else
-      puts "??? =("
-    end
-  # one = 1
-  #   two = 2
-  #   0.upto(4) do |i| # 5 time frames
-  #     if i==0
-  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
-  #       t.category=one; t.save!
-  #     elsif i==1
-  #       t=TimeKey.new(:date => Date.parse('13-12-2011'), :time_frame_id => i)
-  #       t.category=one; t.save!
-  #     elsif i==2
-  #       t=TimeKey.new(:date => Date.parse('11-12-2011'), :time_frame_id => i)
-  #       t.category=one; t.save!
-  #     elsif i==3
-  #       t=TimeKey.new(:date => Date.parse('20-8-2011'), :time_frame_id => i)
-  #       t.category=two; t.save!
-  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
-  #       t.category=two; t.save!
-  #     elsif i==4
-  #       t=TimeKey.new(:date => Date.parse('1-8-1999'), :time_frame_id => i)
-  #       t.category=two; t.save!
-  #       t=TimeKey.new(:date => Date.parse('15-12-2011'), :time_frame_id => i)
-  #       t.category=two; t.save!
-  #     else
-  #       puts "??? =("
-  #     end
-  end
-  puts "---created time keys"
-else
-  puts "---time keys already exist"
 end
 
 

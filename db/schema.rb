@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217043927) do
+ActiveRecord::Schema.define(:version => 20111227044817) do
 
   create_table "memories", :force => true do |t|
     t.text     "content"
@@ -30,14 +30,10 @@ ActiveRecord::Schema.define(:version => 20111217043927) do
     t.string   "representation"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "time_keys", :force => true do |t|
-    t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "category"
-    t.integer  "time_frame_id"
+    t.date     "first_date"
+    t.integer  "first_date_type"
+    t.date     "second_date"
+    t.integer  "second_date_type"
   end
 
 end
