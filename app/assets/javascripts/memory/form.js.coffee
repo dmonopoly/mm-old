@@ -26,13 +26,18 @@ jQuery ->
     setDatePicker: ->
       # First time
       $(".time_frame_field").datepicker {
-          constrainInput: false
-        }
-      $(".time_key_field").datepicker()
+        constrainInput: false
+      }
+      $(".time_key_field").datepicker {
+        # defaultDate: $(this).val() - fix format!!
+        constrainInput: false
+      }
       
       # Ensure new fields get date picker
       $("#add_time_frame").live "click", -> # now & in the future
         $(".time_frame_field").datepicker {
-            constrainInput: false
-          }
-        $(".time_key_field").datepicker()
+          constrainInput: false
+        }
+        $(".time_key_field").datepicker {
+          constrainInput: false
+        }

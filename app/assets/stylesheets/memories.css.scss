@@ -108,6 +108,10 @@
                 color: $text_color;
               }
             }
+            input.time_key_field {
+              width: 100px;
+              display: inline;
+            }
           }
           a#add_time_frame {
             padding: 2px 135px;
