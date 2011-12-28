@@ -9,6 +9,7 @@ jQuery ->
   form.prepareGhostArea() # note: currently, this is attempted all the time...
   form.updateGhostAreaOnKeyUp()
   form.setDatePicker()
+  form.setTimeIcon()
   
   # Class: INDEX
   index = new Application.Memory.Index

@@ -41,3 +41,15 @@ jQuery ->
         $(".time_key_field").datepicker {
           constrainInput: false
         }
+    
+    # Time icon attributes
+    setTimeIcon: ->
+      $("#time_icon").live "click", ->
+        alert "hey"
+        $("#time_frames_form").fadeToggle()
+        
+      # $("#time_icon").button {
+      #   icons: { primary: 'ui-icon-clock'},
+      #   text: false
+      # }
+      # button({ icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'} });

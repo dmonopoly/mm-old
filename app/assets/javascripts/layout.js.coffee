@@ -4,7 +4,7 @@
 @module "Application", ->
   @module "Memory", ->
     class @Form # so you can do formHelper = new Application.Memory.Form
-      info: "prepareGhostArea(), updateGhostAreaOnKeyUp(), setDatePicker()"
+      info: "prepareGhostArea(), updateGhostAreaOnKeyUp(), setDatePicker(), setTimeIcon()"
   
     class @Index
       info: "setTimeFrameAppearance(), setTimeFrameToggleOnHover(), setMemoryHoverAction()"

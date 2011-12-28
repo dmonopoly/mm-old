@@ -1,5 +1,8 @@
 <!--person/memories/edit-->
 <div id="memory_edit">
 	<%= render :partial => "person/memories/partials/form", :locals => { :memory => @memory } %>
-	<%= link_to "Erase", [:person,@memory], :method=>:delete, :confirm=>"Are you sure?", class: "button", id: "delete" %>
+	
+	<div id="delete_area">
+		<%= link_to "Erase", [:person,@memory], :method=>:delete, :confirm=>"Are you sure?", class: "button", id: "delete" %>
+	</div>
 </div>
