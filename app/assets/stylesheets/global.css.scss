@@ -149,7 +149,6 @@ $form_field_width: 300px;
   -webkit-border-radius:6px;
   border-radius:6px;
   border: 1px solid $background_color;
-	display: inline-block;
 	color: #777777;
 	font-family: $common_font;
 	font-weight: bold;
@@ -158,9 +157,5 @@ $form_field_width: 300px;
   &:hover {
     border: 1px solid #dcdcdc;
   	cursor: pointer;
-  }
-  &:active {
-  	position:relative;
-  	top:1px;
   }
 }

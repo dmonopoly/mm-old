@@ -44,12 +44,29 @@ jQuery ->
     
     # Time icon attributes
     setTimeIcon: ->
-      $("#time_icon").live "click", ->
-        alert "hey"
-        $("#time_frames_form").fadeToggle()
-        
-      # $("#time_icon").button {
+      # Clicking the time icon shows the time frames area and hides itself
+      $("#time_icon").click ->
+        $("#time_frames_area").fadeToggle()
+        $(this).fadeToggle()
+      
+      # Clicking within the time frames area undoes the toggle
+      $("#time_frames_area").click ->
+        $("#time_icon").fadeToggle()
+        $(this).fadeToggle()
+      
+      # This prevents child elements of time_frames_area from triggering the toggle
+      $("#time_frames_area a , #time_frames_area input").click ->
+        # $(this).stopPropagation() HERE
+      
+      # Clicking the small time icon hides the time frame forms
+      # $("#small_time_icon").click ->
+      #   $("#time_frames_area").fadeToggle()
+      #   $(this).fadeToggle()
+      #   $("#time_icon").fadeToggle()
+      # 
+      # # Prepare small time icon, which allows the user to hide the time frame forms
+      # $("#small_time_icon").button {
       #   icons: { primary: 'ui-icon-clock'},
-      #   text: false
+      #   # text: false
       # }
       # button({ icons: {primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'} });

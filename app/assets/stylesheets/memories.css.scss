@@ -61,7 +61,7 @@
       text-align: center;
       color: $blue;
     }
-    
+  
     div#content_area {
       margin-top: 180px;
       text-align: center;
@@ -82,10 +82,10 @@
     }
     
     div#time_frames_area {
+      display: none;
       margin-top: 25px;
       margin-left: 50px;
       div#time_frames_form {
-        display:none;
         ul#list {
           display: inline-block;
           padding-left: 0;
