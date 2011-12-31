@@ -17,6 +17,7 @@ javascripts/
     application.js
     initialize.js.coffee
     layout.js.coffee - defines classes in general (static members)
+    helpers.js.coffee - defines my personalized methods
     memories.js.coffee - uses things in memory/
     memory/
         form.js.coffee - class implementation of Application.Memory.Form
@@ -38,6 +39,7 @@ _methodName is a private method in a js.coffee file
 //= require jquery_ujs
 //= require jquery-ui
 //= require darkmagic
+//= require helpers
 //= require layout
 //= require_tree ../javascripts/memory/
 //= require_tree ../javascripts/misc/
@@ -45,6 +47,7 @@ _methodName is a private method in a js.coffee file
 //= require time_frames
 //= require misc
 
+/* Functions below here are included LAST */
 
 /* The following functions are for complex forms & work with methods in application_helper.rb*/
 function add_fields(link, association, content) {

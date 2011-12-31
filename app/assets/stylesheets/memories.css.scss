@@ -81,66 +81,74 @@
       }
     }
     
-    div#time_frames_area {
-      display: none;
-      margin-top: 25px;
-      margin-left: 50px;
-      div#time_frames_form {
-        ul#list {
-          display: inline-block;
-          padding-left: 0;
-          div.fields { // textfield is in here
-            width: 300px;
-            a.x { // the delete time frame button
-              padding: 1px 4px;
-              font-weight: normal;
+    div#special_actions {
+      text-align: center;
+      #time_icon, #location_icon, #submit_memory_button {
+        padding: 30px;
+        margin: 0;
+      }
+      #time_frames_area, #location_area, #submit_area {
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      div#time_frames_area {
+        #time_icon {
+          img {
+            vertical-align: middle;
+          }
+        }
+        
+        div#time_frames_form { // toggled
+//          visibility: hidden;
+          ul#list {
+            display: inline-block;
+            padding-left: 0;
+            div.fields { // textfield is in here
+              width: 250px;
+              a.x { // the delete time frame button
+                padding: 1px 4px;
+                font-weight: normal;
+                &:hover {
+                  color: $text_color;
+                }
+              }
+              input.time_key_field {
+                width: 75px;
+                display: inline;
+              }
+            }
+            a#add_time_frame {
+              padding: 2px 135px;
               &:hover {
                 color: $text_color;
               }
             }
-            input.time_key_field {
-              width: 100px;
-              display: inline;
-            }
+          } // end ul#list
+        }
+      } // end time frames area
+      
+      div#location_area {
+        #location_icon {
+          img {
+            vertical-align: middle;
           }
-          a#add_time_frame {
-            padding: 2px 135px;
-            &:hover {
-              color: $text_color;
-            }
-          }
-        } // end ul#list
+        }
+        .location_field { // toggled
+          visibility: hidden;
+        }
       }
-    }
-
-    div#location_area {
-      display: none;
-      .location_field {
-        
+      
+      div#submit_area {
+        input#submit_memory_button {
+          position: relative;
+          bottom: 20px;
+          font-family: arial;
+        	font-size: 15px;
+        }
       }
-    }
+    } // end special actions
     
-    div#special_actions {
-      text-align: center;
-      #time_icon, #location_icon, #submit_memory_button {
-        padding: 30px 30px;
-      }
-      #time_icon {
-        img {
-          vertical-align: middle;
-        }
-      }
-      #location_icon {
-        margin: 0 200px;
-        img {
-          vertical-align: middle;
-        }
-      }
-      input#submit_memory_button {
-        font-family: arial;
-      	font-size: 15px;
-      }
-    }
   } // end form
   
   div#delete_area {

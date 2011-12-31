@@ -19,8 +19,8 @@
 	<!--Button / Special Actions Area-->
 	<div id="special_actions">
 		<!--Time Frames-->
-		<%= link_to image_tag("clock_icon.jpg", :size=>"35x35"), "#", id: "time_icon", class: "blank_button" %>
 		<div id="time_frames_area">
+			<%= link_to image_tag("clock_icon.jpg", :size=>"35x35"), "#", id: "time_icon", class: "blank_button" %>
 			<div id="time_frames_form">
 				<ul id="list">
 				<%= f.fields_for :time_frames do |builder| %>
@@ -32,14 +32,17 @@
 		</div>
 		
 		<!--Location-->
-		<%= link_to image_tag("location_icon2.png", :size=>"35x35"), "#", id: "location_icon", class: "blank_button" %>
 		<div id="location_area">
+			<%= link_to image_tag("location_icon2.png", :size=>"35x35"), "#", id: "location_icon", class: "blank_button" %>
+			<!--.location_field-->
 			<%= f.fields_for :location do |builder| %>
 				<%= render :partial => "person/locations/partials/location_field", :locals => { :f => builder } %>
 			<% end %>
 		</div>
 		
 		<!--Submit-->
-		<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
+		<div id="submit_area">
+			<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
+		</div>
 	</div>
 <% end %>

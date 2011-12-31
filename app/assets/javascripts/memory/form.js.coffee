@@ -62,13 +62,13 @@ jQuery ->
     setLocationIcon: ->
       # Clicking the location icon shows the location area and hides itself
       $("#location_icon").click ->
-        $("#location_area").fadeToggle()
-        $(this).fadeToggle()
+        $(".location_field").fadeToggleV()
+        $(this).fadeToggleV()
       
       # Clicking within the location area undoes the toggle
       $("#location_area").click ->
-        $("#location_icon").fadeToggle()
-        $(this).fadeToggle()
+        $(".location_field").fadeToggleV()
+        $(this).fadeToggleV()
       
       # This prevents child elements of location_area from triggering the toggle
       $("#location_area input").click (e) ->
