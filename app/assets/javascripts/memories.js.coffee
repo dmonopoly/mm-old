@@ -10,6 +10,7 @@ jQuery ->
   form.updateGhostAreaOnKeyUp()
   form.setDatePicker()
   form.setTimeIcon()
+  form.setLocationIcon()
   
   # Class: INDEX
   index = new Application.Memory.Index

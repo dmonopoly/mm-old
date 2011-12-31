@@ -109,6 +109,21 @@ $form_field_width: 300px;
   -webkit-border-radius:6px;
   border-radius:6px;
 }
+input.elegant_text_field { // uses .rounded
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  height: 24px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  color: $text_color;
+  border: 1px solid $background_color;
+  &:hover {
+    border: 1px solid $pleasant_gray;
+  }
+}
+
 /* Buttons - http://www.cssbuttongenerator.com/ */
 // Standard button; not used anywhere, but taken and modified for particular circumstances
 .button {

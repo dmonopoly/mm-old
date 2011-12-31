@@ -19,6 +19,7 @@
 	<!--Button Area-->
 	<div id="buttons">
 		<%= link_to image_tag("clock_icon.jpg", :size=>"35x35"), "#", id: "time_icon", class: "blank_button" %>
+		<%= link_to "[where icon]", "#", id: "location_icon", class: "blank_button" %>
 		<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
 	</div>
 	
@@ -34,4 +35,10 @@
 		</div>
 	</div>
 	
+	<!--Location-->
+	<div id="location_area">
+		<%= f.fields_for :location do |builder| %>
+			<%= render :partial => "person/locations/partials/location_field", :locals => { :f => builder } %>
+		<% end %>
+	</div>
 <% end %>

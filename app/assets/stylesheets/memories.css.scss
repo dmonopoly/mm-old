@@ -91,17 +91,6 @@
           padding-left: 0;
           div.fields { // textfield is in here
             width: 300px;
-            input {
-              height: 24px;
-              padding-left: 5px;
-              padding-right: 5px;
-              font-size: 16px;
-              color: $text_color;
-              border: 1px solid $background_color;
-              &:hover {
-                border: 1px solid $pleasant_gray;
-              }
-            }
             a.x { // the delete time frame button
               padding: 1px 4px;
               font-weight: normal;
@@ -124,6 +113,13 @@
       }
     }
 
+    div#location_area {
+      display: none;
+      .location_field {
+        
+      }
+    }
+    
     div#buttons {
       #time_icon {
         position: absolute;
