@@ -85,12 +85,16 @@
       text-align: center;
       #time_icon, #location_icon, #submit_memory_button {
         padding: 30px;
-        margin: 0;
+        width: 100px;
+        height: 80px;
       }
       #time_frames_area, #location_area, #submit_area {
         width: 300px;
         display: inline-block;
         vertical-align: top;
+      }
+      .toggled {
+        margin-top: 20px;
       }
       div#time_frames_area {
         #time_icon {
@@ -100,7 +104,7 @@
         }
         
         div#time_frames_form { // toggled
-//          visibility: hidden;
+          display: none;
           ul#list {
             display: inline-block;
             padding-left: 0;
@@ -135,7 +139,7 @@
           }
         }
         .location_field { // toggled
-          visibility: hidden;
+          display: none;
         }
       }
       

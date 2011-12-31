@@ -5,19 +5,18 @@ jQuery ->
 # $.fn.myFunction = -> # So you can do $("#something").myFunction
 #   $(this).addClass "changed"
 
+# NOT USED
 # Toggles the visibility element rather than display
 # Uses fadeToggle() effect
 $.fn.fadeToggleV = ->
   if $(this).css('visibility') == 'visible'
-    alert "hey"
     $(this).animate
-      visibility: "hidden"
-      border: "1px solid blue"
-    , 1000 # duration
+      opacity: 0.25
+      visibility: 'toggle'
+    , 5000
+    # $(this).css('visibility', 'hidden')
   else
-    $(this).animate
-      visibility: 'visible'
-    , 1000
+    $(this).css('visibility', 'visible')
 
     # animate() example:
     # $("#book").animate

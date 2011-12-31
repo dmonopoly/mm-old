@@ -20,8 +20,8 @@
 	<div id="special_actions">
 		<!--Time Frames-->
 		<div id="time_frames_area">
-			<%= link_to image_tag("clock_icon.jpg", :size=>"35x35"), "#", id: "time_icon", class: "blank_button" %>
-			<div id="time_frames_form">
+			<%= link_to image_tag("clock_icon.jpg", :size=>"30x30"), "#", id: "time_icon", class: "blank_button" %>
+			<div id="time_frames_form" class="toggled">
 				<ul id="list">
 				<%= f.fields_for :time_frames do |builder| %>
 					<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
@@ -42,7 +42,7 @@
 		
 		<!--Submit-->
 		<div id="submit_area">
-			<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
+			<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button", tabindex: 2 %>
 		</div>
 	</div>
 <% end %>

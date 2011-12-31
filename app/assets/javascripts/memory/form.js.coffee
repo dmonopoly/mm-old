@@ -44,33 +44,12 @@ jQuery ->
     
     # Time icon attributes
     setTimeIcon: ->
-      # Clicking the time icon shows the time frames area and hides itself
+      # Clicking the time icon toggles the time frames area
       $("#time_icon").click ->
-        $("#time_frames_area").fadeToggle()
-        $(this).fadeToggle()
-      
-      # Clicking within the time frames area undoes the toggle
-      $("#time_frames_area").click ->
-        $("#time_icon").fadeToggle()
-        $(this).fadeToggle()
-      
-      # This prevents child elements of time_frames_area from triggering the toggle
-      $("#time_frames_area a , #time_frames_area input").click (e) ->
-        e.stopPropagation()
+        $("#time_frames_form").fadeToggle()
     
     # Location icon attributes
     setLocationIcon: ->
-      # Clicking the location icon shows the location area and hides itself
+      # Clicking the location icon toggles the location field
       $("#location_icon").click ->
-        $(".location_field").fadeToggleV()
-        $(this).fadeToggleV()
-      
-      # Clicking within the location area undoes the toggle
-      $("#location_area").click ->
-        $(".location_field").fadeToggleV()
-        $(this).fadeToggleV()
-      
-      # This prevents child elements of location_area from triggering the toggle
-      $("#location_area input").click (e) ->
-        e.stopPropagation()
-      
+        $(".location_field").fadeToggle()
