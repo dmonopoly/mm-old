@@ -16,29 +16,30 @@
 		</div>
 	</div>
 
-	<!--Button Area-->
-	<div id="buttons">
+	<!--Button / Special Actions Area-->
+	<div id="special_actions">
+		<!--Time Frames-->
 		<%= link_to image_tag("clock_icon.jpg", :size=>"35x35"), "#", id: "time_icon", class: "blank_button" %>
-		<%= link_to "[where icon]", "#", id: "location_icon", class: "blank_button" %>
-		<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
-	</div>
-	
-	<!--Time Frames-->
-	<div id="time_frames_area">
-		<div id="time_frames_form">
-			<ul id="list">
-			<%= f.fields_for :time_frames do |builder| %>
-				<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
-		  <% end %>
-			<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
-			</ul>
+		<div id="time_frames_area">
+			<div id="time_frames_form">
+				<ul id="list">
+				<%= f.fields_for :time_frames do |builder| %>
+					<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
+			  <% end %>
+				<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
+				</ul>
+			</div>
 		</div>
-	</div>
-	
-	<!--Location-->
-	<div id="location_area">
-		<%= f.fields_for :location do |builder| %>
-			<%= render :partial => "person/locations/partials/location_field", :locals => { :f => builder } %>
-		<% end %>
+		
+		<!--Location-->
+		<%= link_to image_tag("location_icon2.png", :size=>"35x35"), "#", id: "location_icon", class: "blank_button" %>
+		<div id="location_area">
+			<%= f.fields_for :location do |builder| %>
+				<%= render :partial => "person/locations/partials/location_field", :locals => { :f => builder } %>
+			<% end %>
+		</div>
+		
+		<!--Submit-->
+		<%= f.submit "[_]", id: "submit_memory_button", class: "blank_button" %>
 	</div>
 <% end %>

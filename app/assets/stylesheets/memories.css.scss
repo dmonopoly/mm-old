@@ -73,7 +73,7 @@
         color: $text_color;
         border: 1px solid $background_color;
         &:hover {
-          border: 1px solid $pleasant_gray;
+          border-bottom: 1px solid $pleasant_gray;
         }
       }
       #character_indicator {
@@ -120,16 +120,23 @@
       }
     }
     
-    div#buttons {
+    div#special_actions {
+      text-align: center;
+      #time_icon, #location_icon, #submit_memory_button {
+        padding: 30px 30px;
+      }
       #time_icon {
-        position: absolute;
-        padding: 30px;
-        left: 20%;
+        img {
+          vertical-align: middle;
+        }
+      }
+      #location_icon {
+        margin: 0 200px;
+        img {
+          vertical-align: middle;
+        }
       }
       input#submit_memory_button {
-        position: absolute;
-        right: 20%;
-        padding: 40px;
         font-family: arial;
       	font-size: 15px;
       }
