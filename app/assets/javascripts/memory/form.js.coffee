@@ -55,8 +55,8 @@ jQuery ->
         $(this).fadeToggle()
       
       # This prevents child elements of time_frames_area from triggering the toggle
-      $("#time_frames_area a , #time_frames_area input").click ->
-        # $(this).stopPropagation() HERE
+      $("#time_frames_area a , #time_frames_area input").click (e) ->
+        e.stopPropagation()
       
       # Clicking the small time icon hides the time frame forms
       # $("#small_time_icon").click ->
