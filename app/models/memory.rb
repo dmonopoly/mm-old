@@ -4,8 +4,10 @@ class Memory < ActiveRecord::Base
   has_many :memory_locations
   has_many :locations, :through => :memory_locations
   
-  accepts_nested_attributes_for :time_frames, :allow_destroy => true
-  accepts_nested_attributes_for :locations, :allow_destroy => true
+  accepts_nested_attributes_for :time_frames, :allow_destroy => true, 
+    :reject_if => proc { |attributes| attributes['representation'].blank? } # prevent blank field from creating a tf
+  accepts_nested_attributes_for :locations, :allow_destroy => true,
+    :reject_if => proc { |attributes| attributes['name'].blank? }
   
   validates_presence_of :content
   

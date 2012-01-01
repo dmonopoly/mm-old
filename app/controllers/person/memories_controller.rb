@@ -24,14 +24,6 @@ class Person::MemoriesController < PersonController
     # session[:previous_memory_id] = @memory.id
     if @memory.save
       flash[:notice] = "New memory saved"
-      # Remove time frames that are ""
-      @memory.time_frames.each do |tf|
-        tf.destroy if tf.representation.strip == ""
-      end
-      # Remove locations that are ""
-      @memory.locations.each do |loc|
-        loc.destroy if loc.name.strip == ""
-      end
       redirect_to :action => :new # redirect_to [:person, @memory]
     else
       render :action => :new
@@ -52,14 +44,6 @@ class Person::MemoriesController < PersonController
     @memory = Memory.find(params[:id])
     if @memory.update_attributes(params[:memory])
       flash[:notice] = 'Memory updated'
-      # Remove time frames that are ""
-      @memory.time_frames.each do |tf|
-        tf.destroy if tf.representation.strip == ""
-      end
-      # Remove locations that are ""
-      @memory.locations.each do |loc|
-        loc.destroy if loc.name.strip == ""
-      end
       redirect_to [:person, @memory]
     else
       render :action => "edit"
