@@ -1,13 +1,16 @@
 class Person::MemoriesController < PersonController
   def index
+    # Eager loading of time frames & memory time frames
+    # http://matthewman.net/2007/01/04/eager-loading-objects-in-a-rails-has_many-through-association/
     @memories = Memory.find(:all, :include => {:memory_time_frames => :time_frame})
-    # @memory = Memory.all
+    # @memories = Memory.all
     # @productions = Production.find(:all, ... , :include => {:runs => :venue})
   end
   
   def new
     @memory = Memory.new
     1.times { @memory.time_frames.build }
+    1.times { @memory.locations.build }
     # if session[:previous_memory_id]
     #   @previous_memory = session[:previous_memory_id]
     #   @previous_memory.time_frames.count.times { @memory.time_frames.build }
@@ -25,7 +28,10 @@ class Person::MemoriesController < PersonController
       @memory.time_frames.each do |tf|
         tf.destroy if tf.representation.strip == ""
       end
-      
+      # Remove locations that are ""
+      @memory.locations.each do |loc|
+        loc.destroy if loc.name.strip == ""
+      end
       redirect_to :action => :new # redirect_to [:person, @memory]
     else
       render :action => :new
@@ -38,13 +44,22 @@ class Person::MemoriesController < PersonController
   
   def edit
     @memory = Memory.find(params[:id])
-    # 1.times { @memory.time_frames.build }
+    1.times { @memory.time_frames.build } if @memory.time_frames.empty?
+    1.times { @memory.locations.build } if @memory.locations.empty?
   end
   
   def update
     @memory = Memory.find(params[:id])
     if @memory.update_attributes(params[:memory])
       flash[:notice] = 'Memory updated'
+      # Remove time frames that are ""
+      @memory.time_frames.each do |tf|
+        tf.destroy if tf.representation.strip == ""
+      end
+      # Remove locations that are ""
+      @memory.locations.each do |loc|
+        loc.destroy if loc.name.strip == ""
+      end
       redirect_to [:person, @memory]
     else
       render :action => "edit"

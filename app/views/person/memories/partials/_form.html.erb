@@ -26,7 +26,7 @@
 				<%= f.fields_for :time_frames do |builder| %>
 					<%= render :partial => "person/time_frames/partials/time_frame_fields", :locals => { :f => builder } %>
 			  <% end %>
-				<%= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
+				<%#= link_to_add_fields "+", f, :time_frames, "person/time_frames/partials/", ".fields", id: 'add_time_frame', class: 'blank_button' %>
 				</ul>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 		<div id="location_area">
 			<%= link_to image_tag("location_icon2.png", :size=>"35x35"), "#", id: "location_icon", class: "blank_button" %>
 			<!--.location_field-->
-			<%= f.fields_for :location do |builder| %>
+			<%= f.fields_for :locations do |builder| %>
 				<%= render :partial => "person/locations/partials/location_field", :locals => { :f => builder } %>
 			<% end %>
 		</div>
