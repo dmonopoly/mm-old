@@ -4,8 +4,11 @@
 	<%= link_to_remove_fields "X", f, "fields", class: "blank_button x" %>
 	<br>
 	<!--JS updates the following appropriately-->
-	<%= f.text_field :first_date, class: "time_key_field elegant_text_field" %>
-	<%= f.check_box :first_date_type %>
-	<%= f.text_field :second_date, class: "time_key_field elegant_text_field" %>
-	<%= f.check_box :second_date_type %>
+	<%= f.text_field :first_date, class: "time_key_field elegant_text_field", placeholder: "Start" %>
+	<%= f.label :first_date_precise, "Precise?", class: "check_box_label" %>
+	<%= f.check_box :first_date_precise %>
+	<br>
+	<%= f.text_field :second_date, class: "time_key_field elegant_text_field", placeholder: "End" %>
+	<%= f.label :second_date_precise, "Precise?", class: "check_box_label" %>
+	<%= f.check_box :second_date_precise %>
 </div>

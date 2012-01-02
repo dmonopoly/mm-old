@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120101025438) do
+ActiveRecord::Schema.define(:version => 20120102053443) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(:version => 20120101025438) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "first_date"
-    t.integer  "first_date_type"
     t.date     "second_date"
-    t.integer  "second_date_type"
+    t.boolean  "first_date_precise"
+    t.boolean  "second_date_precise"
   end
 
 end

@@ -121,6 +121,11 @@
                 width: 75px;
                 display: inline;
               }
+              .check_box_label {
+                // font: italic bold 12px/30px serif;
+                font: $common_font;
+                color: $text_color;
+              }
             }
             a#add_time_frame {
               padding: 2px 135px;

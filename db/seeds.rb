@@ -30,16 +30,16 @@ puts "---found or created memories"
 # Time Frames
 # 1 per memory, for each day
 if TimeFrame.count == 0
-  TimeFrame.create(:representation => "12/15/2011", :first_date_type=>1,
+  TimeFrame.create(:representation => "12/15/2011", :first_date_precise=>true,
                     :first_date => Date.parse('15-12-2011')) # 0
-  TimeFrame.create(:representation => "12/13/2011", :first_date_type=>1,
+  TimeFrame.create(:representation => "12/13/2011", :first_date_precise=>true,
                     :first_date => Date.parse('13-12-2011')) # 1
-  TimeFrame.create(:representation => "12/11/2011", :first_date_type=>1,
+  TimeFrame.create(:representation => "12/11/2011", :first_date_precise=>true,
                     :first_date => Date.parse('11-12-2011')) # 2
   # More general
-  TimeFrame.create(:representation => "Semester 1 at USC", :first_date_type=>2, :second_date_type=>2,
+  TimeFrame.create(:representation => "Semester 1 at USC", :first_date_precise=>false, :second_date_precise=>false,
                     :first_date => Date.parse('20-8-2011'), :second_date => Date.parse('15-12-2011')) # 3
-  TimeFrame.create(:representation => "Schooling Years", :first_date_type=>2, :second_date_type=>2,
+  TimeFrame.create(:representation => "Schooling Years", :first_date_precise=>false, :second_date_precise=>false,
                     :first_date => Date.parse('1-8-1999'), :second_date => Date.parse('15-12-2011')) # 4
   puts "---created time frames"
 else

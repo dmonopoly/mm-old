@@ -1,7 +1,17 @@
 Next steps:
-Improve the form. Get the time frames' past data to be saved to the next form. If you can't figure this out, go on with
-locations.
+Improve the form. 	
 
+
+What's left atm?
+-Form
+	o tf form:
+		-deal with dates that normally only need 1 time frame (i.e. 2 identical time keys)
+	o Get the time frames' past data to be saved to the next form... really, make repeated memory creation easy.
+-Index
+	o Make it engaging / interesting.
+	
+Pretend I need to show this today.
+	
 Remember. This must allow people to easily tell their stories.
 
 
