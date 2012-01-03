@@ -2,9 +2,12 @@ class Person::MemoriesController < PersonController
   def index
     # Eager loading of time frames & memory time frames
     # http://matthewman.net/2007/01/04/eager-loading-objects-in-a-rails-has_many-through-association/
-    @memories = Memory.find(:all, :include => {:memory_time_frames => :time_frame})
-    # @memories = Memory.all
-    # @productions = Production.find(:all, ... , :include => {:runs => :venue})
+    # Screencast 22 describes this. 
+    # This loads memory_time_frames (a memory has many of these) & the time frame (memory_time_frame has one of these) associations
+    # @memories = Memory.find(:all, :include => {:memory_time_frames => :time_frame})
+    # Maybe needed later (if memory.time_frames is called...)
+    
+    @memories = Memory.all
   end
   
   def new

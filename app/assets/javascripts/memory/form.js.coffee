@@ -53,3 +53,14 @@ jQuery ->
       # Clicking the location icon toggles the location field
       $("#location_icon").click ->
         $(".location_field").fadeToggle()
+    
+    # Set the format of time keys to be right (override edit's default time key date formats)
+    setTimeFramesFormat: ->
+      $(".time_key_field").each ->
+        value = $(this).attr('value')
+        unless value == ''
+          # Date conversion
+          dateparts = value.split('-')
+          value2 = dateparts[1]+"/"+dateparts[2]+"/"+dateparts[0]
+          $(this).attr('value', value2)
+        

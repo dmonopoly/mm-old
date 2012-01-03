@@ -5,10 +5,6 @@ class TimeFrame < ActiveRecord::Base
   
   # accepts_nested_attributes_for :memories - needed if you have a form mainly for time_frames but with nested memories
   
-  # default_scope :order => 'representation ASC' # change later to order by length, smallest to largest
-  
-  # default_scope :order => "length ASC"
-  
   # Sorts by increasing length
   # Can use TimeFrame.all.sort
   def <=> other

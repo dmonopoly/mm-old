@@ -7,10 +7,12 @@ jQuery ->
   # Alters ghost content area of form appropriately
   form = new Application.Memory.Form
   form.prepareGhostArea() # note: currently, this is attempted all the time...
-  form.updateGhostAreaOnKeyUp()
   form.setDatePicker()
   form.setTimeIcon()
   form.setLocationIcon()
+  form.setTimeFramesFormat()
+  
+  form.updateGhostAreaOnKeyUp()
   
   # Class: INDEX
   index = new Application.Memory.Index
