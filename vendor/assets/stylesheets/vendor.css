@@ -1,6 +1,6 @@
 /* 
  * This is needed to include the jquery-ui theme and other things
- * I wonder why I don't need blueprint here for it to work...
+ * Note that you included css blueprint in application.html.erb in the classic way
  * 
  *= require_tree ./jquery-ui
  *= require_tree ./tokeninput

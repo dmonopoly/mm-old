@@ -6,7 +6,7 @@ jQuery ->
   # Class: FORM
   # Alters ghost content area of form appropriately
   form = new Application.Memory.Form
-  form.prepareGhostArea() # note: currently, this is attempted all the time...
+  form.prepareGhostArea() # note: currently, this is attempted all the time... how can I limit this to certain views?
   form.setDatePicker()
   form.setTimeIcon()
   form.setLocationIcon()
