@@ -6,51 +6,57 @@
  * Licensed jointly under the GPL and MIT licenses,
  * choose which one suits your project best!
  *
+ * This plugin was forked on 10/21/2011 to allow adding tokens
+ * from within the plugin itself.
  */
 
+
 (function ($) {
+
 // Default settings
 var DEFAULT_SETTINGS = {
-	// Search settings
+    // Search settings
     method: "GET",
-    contentType: "json",
     queryParam: "q",
     searchDelay: 300,
     minChars: 1,
     propertyToSearch: "name",
     jsonContainer: null,
+    contentType: "json",
 
-	// Display settings
-    hintText: "Type in a search term",
-    noResultsText: "No results",
-    searchingText: "Searching...",
-    deleteText: "&times;",
-    animateDropdown: true,
-
-	// Tokenization settings
-    tokenLimit: null,
-    tokenDelimiter: ",",
-    preventDuplicates: false,
-
-	// Output settings
-    tokenValue: "id",
+	// Add token settings
+	addTokenAllow: true,
+	addTokenMethod: "POST",
+	addTokenURL: '',
 
 	// Prepopulation settings
     prePopulate: null,
     processPrePopulate: false,
 
-	// Manipulation settings
-    idPrefix: "token-input-",
-
-	// Formatters
+    // Display settings
+    hintText: "Type in a search term",
+    noResultsText: 'No results. <a href="#" class="'+DEFAULT_CLASSES.addToken+'">Add it?</a>',
+    searchingText: "Searching...",
+    deleteText: "&times;",
+    animateDropdown: true,
+    theme: null,
     resultsFormatter: function(item){ return "<li>" + item[this.propertyToSearch]+ "</li>" },
     tokenFormatter: function(item) { return "<li><p>" + item[this.propertyToSearch] + "</p></li>" },
 
-	// Callbacks
+    // Tokenization settings
+    tokenLimit: null,
+    tokenDelimiter: ",",
+    preventDuplicates: false,
+    tokenValue: "id",
+
+    // Callbacks
     onResult: null,
     onAdd: null,
     onDelete: null,
-    onReady: null
+    onReady: null,
+
+    // Other settings
+    idPrefix: "token-input-"
 };
 
 // Default classes to use when theming
@@ -64,7 +70,8 @@ var DEFAULT_CLASSES = {
     dropdownItem: "token-input-dropdown-item",
     dropdownItem2: "token-input-dropdown-item2",
     selectedDropdownItem: "token-input-selected-dropdown-item",
-    inputToken: "token-input-input-token"
+    inputToken: "token-input-input-token",
+	addToken: "token-input-add-token"
 };
 
 // Input box position "enum"
@@ -115,8 +122,8 @@ var methods = {
         return this;
     },
     get: function() {
-    	return this.data("tokenInputObject").getTokens();
-   	}
+        return this.data("tokenInputObject").getTokens();
+    }
 }
 
 // Expose the .tokenInput function to jQuery as a plugin
@@ -196,7 +203,8 @@ $.TokenList = function (input, url_or_data, settings) {
             }
         })
         .blur(function () {
-            hide_dropdown();
+			setTimeout(function() { hide_dropdown(); }, 400);
+            $(this).data('tag', $(this).val());
             $(this).val("");
         })
         .bind("keyup keydown blur update", resize_input)
@@ -361,6 +369,32 @@ $.TokenList = function (input, url_or_data, settings) {
             whiteSpace: "nowrap"
         });
 
+	// Bind .add-tags <a> link to add a tag to the system
+	if (settings.addTokenAllow) {
+		var add_token_link = $('.'+settings.classes.addToken)
+			.die('click')
+			.live('click', function(e) {
+				e.preventDefault();
+				var tagName = input_token.find('input:first').data('tag');
+				var addURL = (settings.addTokenURL) ? settings.addTokenURL : settings.url.split('?'+settings.queryParameter+'=').join('');
+				var contentType = (settings.crossDomain) ? 'jsonp' : settings.contentType;
+
+				$.ajax({
+					url: addURL,
+					type: settings.addTokenMethod,
+					data: { q: tagName },
+					dataType: 'json',
+					success: function(newTag) {
+						if (newTag) {
+							dropdown.find('p').text('Added!');
+							add_token(newTag);
+							setTimeout(function() { hide_dropdown(); }, 2000);
+						}
+					}
+				})
+			});
+	}
+
     // Pre-populate list if items exist
     hidden_input.val("");
     var li_data = settings.prePopulate || hidden_input.data("pre");
@@ -412,10 +446,10 @@ $.TokenList = function (input, url_or_data, settings) {
             }
         });
     }
-    
+
     this.getTokens = function() {
-   		return saved_tokens;
-   	}
+        return saved_tokens;
+    }
 
     //
     // Private functions
@@ -633,7 +667,7 @@ $.TokenList = function (input, url_or_data, settings) {
                 position: "absolute",
                 top: $(token_list).offset().top + $(token_list).outerHeight(),
                 left: $(token_list).offset().left,
-                zindex: 999
+                'z-index': 999
             })
             .show();
     }
@@ -656,7 +690,7 @@ $.TokenList = function (input, url_or_data, settings) {
     function highlight_term(value, term) {
         return value.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + term + ")(?![^<>]*>)(?![^&;]+;)", "gi"), "<b>$1</b>");
     }
-    
+
     function find_value_and_highlight_term(template, value, term) {
         return template.replace(new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + value + ")(?![^<>]*>)(?![^&;]+;)", "g"), highlight_term(value, term));
     }
@@ -679,11 +713,10 @@ $.TokenList = function (input, url_or_data, settings) {
 
             $.each(results, function(index, value) {
                 var this_li = settings.resultsFormatter(value);
-                
-                this_li = find_value_and_highlight_term(this_li ,value[settings.propertyToSearch], query);            
-                
+                this_li = find_value_and_highlight_term(this_li ,value[settings.propertyToSearch], query);
+
                 this_li = $(this_li).appendTo(dropdown_ul);
-                
+
                 if(index % 2) {
                     this_li.addClass(settings.classes.dropdownItem);
                 } else {
@@ -783,7 +816,8 @@ $.TokenList = function (input, url_or_data, settings) {
                 ajax_params.data[settings.queryParam] = query;
                 ajax_params.type = settings.method;
                 ajax_params.dataType = settings.contentType;
-                if(settings.crossDomain) {
+                
+				if (settings.crossDomain) {
                     ajax_params.dataType = "jsonp";
                 }
 
@@ -799,6 +833,18 @@ $.TokenList = function (input, url_or_data, settings) {
                       populate_dropdown(query, settings.jsonContainer ? results[settings.jsonContainer] : results);
                   }
                 };
+
+				// Attach the failure callback, which returns an error if forbidden
+				ajax_params.error = function(error) {
+					switch(error.status) {
+						case 403:
+							alert("403: You are unauthorized to view the token endpoint.");
+							break;
+						case 404:
+							alert("404: Token endpoint does not exist.")
+							break;
+					}
+				};
 
                 // Make the request
                 $.ajax(ajax_params);
