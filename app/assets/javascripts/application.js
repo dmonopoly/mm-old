@@ -38,6 +38,7 @@ _methodName is a private method in a js.coffee file
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require vendor
 //= require darkmagic
 //= require helpers
 //= require layout

@@ -70,6 +70,43 @@ else
   puts "---memory time frames already exist"
 end
 
+# Locations
+if Location.count == 0
+  Location.create!(:name => "Syracuse")
+  Location.create!(:name => "Doubletree Home")
+  Location.create!(:name => "USC")
+  Location.create!(:name => "Los Angeles")
+  Location.create!(:name => "Earth")
+  puts "---created locations"
+else
+  puts "---locations already exist"
+end
+
+# MemoryLocations
+if MemoryLocation.count == 0
+  0.upto(2) do |i| # 3 memories
+    if i == 0
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[0].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[1].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[2].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[4].id)
+    elsif i == 1
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[2].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[3].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[4].id)
+    elsif i == 2
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[0].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[2].id)
+      MemoryLocation.create!(:memory_id => Memory.all[i].id, :location_id => Location.all[4].id)
+    else
+      puts "=("
+    end
+  end
+  puts "---created memory locations"
+else
+  puts "---memory locations already exist"
+end
+
 
 # ## Creating the organizations; must have at least 2 for proceeding code to work
 # [ "USC", "UCLA" ].each do |organization_name|

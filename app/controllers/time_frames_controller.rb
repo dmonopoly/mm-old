@@ -1,3 +1,4 @@
+# Not used yet.
 class TimeFramesController < ApplicationController
   def index
     @time_frames = TimeFrame.all

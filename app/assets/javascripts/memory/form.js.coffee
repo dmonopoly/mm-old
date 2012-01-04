@@ -52,7 +52,7 @@ jQuery ->
     setLocationIcon: ->
       # Clicking the location icon toggles the location field
       $("#location_icon").click ->
-        $(".location_field").fadeToggle()
+        $("#location_field").fadeToggle()
     
     # Set the format of time keys to be right (override edit's default time key date formats)
     setTimeFramesFormat: ->
@@ -63,4 +63,14 @@ jQuery ->
           dateparts = value.split('-')
           value2 = dateparts[1]+"/"+dateparts[2]+"/"+dateparts[0]
           $(this).attr('value', value2)
-        
+    
+    # Fancy token setup
+    setLocationTokens: ->
+      $("#location_token_field").tokenInput "/person/locations.json", {
+        crossDomain: false,
+        prePopulate: $(this).data("pre"),
+        theme: "facebook",
+        preventDuplicates: true
+      }
+      # tokenInput creates this textfield - the one actually visible
+      $("#token-input-location_token_field").addClass("shorter_text_field elegant_text_field")

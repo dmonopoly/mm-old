@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Location do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is not valid with no name" do
+    pending "later"
+  end
+  
 end

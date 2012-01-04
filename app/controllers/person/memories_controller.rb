@@ -24,6 +24,13 @@ class Person::MemoriesController < PersonController
   
   def create
     @memory = Memory.new(params[:memory])
+    # params[:time_frames].each do |tf|
+    #   if tf.representation.already_exists?
+    #     params[:time_frames].delete
+    # end
+    # no...
+    # MemoryTimeFrame.create..?
+    
     # session[:previous_memory_id] = @memory.id
     if @memory.save
       flash[:notice] = "New memory saved"

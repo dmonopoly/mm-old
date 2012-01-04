@@ -142,9 +142,11 @@
           img {
             vertical-align: middle;
           }
+          margin-bottom: 200px;
         }
-        .location_field { // toggled
+        #location_field { // toggled
           display: none;
+          // #location_token_field in here
         }
       }
       

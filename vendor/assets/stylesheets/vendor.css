@@ -1,5 +1,7 @@
 /* 
- * This is needed to include the jquery-ui theme.
+ * This is needed to include the jquery-ui theme and other things
+ * I wonder why I don't need blueprint here for it to work...
+ * 
  *= require_tree ./jquery-ui
- *
+ *= require_tree ./tokeninput
 */
