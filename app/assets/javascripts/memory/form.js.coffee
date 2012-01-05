@@ -72,5 +72,5 @@ jQuery ->
         theme: "facebook",
         preventDuplicates: true
       }
-      # tokenInput creates this textfield - the one actually visible
-      $("#token-input-location_token_field").addClass("shorter_text_field elegant_text_field")
+      # tokenInput creates this textfield - the one actually visible DOESN'T WORK
+      # $("#token-input-location_token_field").addClass("shorter_text_field elegant_text_field")

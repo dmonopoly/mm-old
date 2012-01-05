@@ -12,19 +12,29 @@ jQuery ->
       
       # Other time frames
       $(".timeline").each ->
-        days_lived = 6574 # number of days in ~18 years of life - change later to use user.rb
+        days_lived = 6574 # number of days in ~18 years of life - change later to use birth date!!!
+                          # or perhaps do something else to make the timeline provide PERSPECTIVE..
+                          # like by estimating how long you'll live... a bit scary...
         life_factor = life_height/days_lived # useful factor for calculation; px per day
         
         time_length = $(this).attr('id').split('_')[3] # get time lengths in days of time frames
         days_ago = $(this).attr('id').split('_')[4] # get the time length of days ago (to time key nearest now)
         
-        height = life_factor * time_length # px per day * days = px
-        if height >= 1
-          $(this).css('height', height)
+        if time_length == "1" # if the time frame is one date
           offset = life_factor * days_ago # px per day * days = px
           $(this).css('margin-top', offset)
+          # Bright spark for single-day memories!
+          $(this).css('height', '2px') # spark size, haha
+          $(this).css('width', '2px')
+          $(this).css('background', 'red')
         else
-          $(this).css('height', 0) # too small to be seen; don't bother calculating offset
+          height = life_factor * time_length # px per day * days = px
+          if height >= 1
+            $(this).css('height', height)
+            offset = life_factor * days_ago # px per day * days = px
+            $(this).css('margin-top', offset)
+          else
+            $(this).css('height', 0) # too small to be seen; don't bother calculating offset
     
     # On keyup, update the appearance accordingly for starting text
     setTimeFrameToggleOnHover: ->
