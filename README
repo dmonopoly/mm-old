@@ -4,11 +4,14 @@ Improve the form.
 
 What's left atm?
 -Form
-	o tf form:
+	o locations - get token fields decent
+	o tf form - get token fields decent
 		-deal with dates that normally only need 1 time frame (i.e. 2 identical time keys)
+		-make time key definition in separate time frames area
 	o Get the time frames' past data to be saved to the next form... really, make repeated memory creation easy.
+
 -Index
-	o Make it engaging / interesting.
+	o Make it engaging / interesting. Categorization => understanding. Show time frames of memories.
 	
 Pretend I need to show this today.
 	

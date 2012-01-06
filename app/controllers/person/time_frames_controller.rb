@@ -1,5 +1,4 @@
-# Not used yet.
-class TimeFramesController < ApplicationController
+class Person::TimeFramesController < PersonController
   def index
     @time_frames = TimeFrame.all
   end

@@ -8,7 +8,8 @@
               setTimeFramesFormat(), setLocationTokens()"
   
     class @Index
-      info: "setTimeFrameAppearance(), setTimeFrameToggleOnHover(), setMemoryHoverAction()"
+      info: "setTimeFrameAppearance(), setTimeFrameToggleOnHover(), setMemoryHoverAction(),
+              setTimeFramesOnClick(), setTimeFramesOnHover()"
 
   @module "Misc", ->
     class @Flash

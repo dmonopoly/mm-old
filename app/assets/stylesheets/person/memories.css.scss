@@ -1,4 +1,4 @@
-// Place all the styles related to the memories controller here.
+// Place all the styles related to the person/memories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -27,6 +27,8 @@
   #timelines {
     position: fixed;
     left: $central_width+50;
+    width: 50px; // to ensure you can hover over and click on the area
+    text-align: center;
     div.timeline, div.life_timeline {
       div.keys { display: none; }
       float: left;
@@ -35,9 +37,23 @@
       background: orange;
       width: 1px;
     }
+    #time_frame_words { 
+      display: inline;
+      font: italic 14px $common_font;
+      color: $text_color;
+      margin-left:20px;
+    }
+    #life_time_frame { // = div.life_timeline
+      
+    }
+    &:hover {
+      background: $pale_yellow; // $faint_blue
+      cursor: pointer;
+    }
   }
   
   #memories {
+    width: $central_width - 100px;
     .memory {
     
     }

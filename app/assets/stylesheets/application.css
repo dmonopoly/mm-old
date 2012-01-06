@@ -8,6 +8,7 @@
  *= require vendor
  *= require global
  *= require layout
- *= require memories
- *= require time_frames
+ *= require person/memories
+ *= require person/time_frames
+ *= require person/locations
 */

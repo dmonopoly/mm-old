@@ -69,7 +69,7 @@ jQuery ->
       $("#location_token_field").tokenInput "/person/locations.json", {
         crossDomain: false,
         prePopulate: $(this).data("pre"),
-        theme: "facebook",
+        theme: "facebook"
         preventDuplicates: true
       }
       # tokenInput creates this textfield - the one actually visible DOESN'T WORK

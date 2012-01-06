@@ -5,18 +5,24 @@ jQuery ->
   class @Index
     # Set heights and vertical offsets (margin top) of time frames
     setTimeFrameAppearance: ->
-      life_height = `$(document).height()`-50 # useful constant; depends on document's height
+      life_height = $(window).height()-64 # useful constant; depends on document's height
+      # Time lines div in general
+      $("#timelines").css('height', life_height + 'px')
+      
+      # Time frame words
+      $("#time_frame_words").css('display','none')
       
       # Life time frame
       $('#life_time_frame').css('height', life_height + 'px');
       
+      # Useful variables
+      days_lived = 6574 # number of days in ~18 years of life - change later to use birth date!!!
+                        # or perhaps do something else to make the timeline provide PERSPECTIVE..
+                        # like by estimating how long you'll live... a bit scary...
+      life_factor = life_height/days_lived # useful factor for calculation; px per day
+      
       # Other time frames
       $(".timeline").each ->
-        days_lived = 6574 # number of days in ~18 years of life - change later to use birth date!!!
-                          # or perhaps do something else to make the timeline provide PERSPECTIVE..
-                          # like by estimating how long you'll live... a bit scary...
-        life_factor = life_height/days_lived # useful factor for calculation; px per day
-        
         time_length = $(this).attr('id').split('_')[3] # get time lengths in days of time frames
         days_ago = $(this).attr('id').split('_')[4] # get the time length of days ago (to time key nearest now)
         
@@ -73,3 +79,12 @@ jQuery ->
         # }, function() {
         #     that.css({borderLeft: "1px solid gray"});
         # });
+    
+    setTimeFramesOnClick: ->
+      $("#timelines").click ->
+        `window.location.href = '/person/time_frames';` # go to time_frames index
+        
+    setTimeFramesOnHover: ->
+      $("#timelines").hover ->
+        $("#time_frame_words").stop(true, true).fadeToggle()
+        # $("#life_time_frame").stop(true, true).fadeToggle()

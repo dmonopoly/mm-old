@@ -33,3 +33,5 @@ jQuery ->
   index.setTimeFrameAppearance()
   index.setTimeFrameToggleOnHover()
   index.setMemoryHoverAction() # not used
+  index.setTimeFramesOnClick()
+  index.setTimeFramesOnHover() # add fancy stuff later
