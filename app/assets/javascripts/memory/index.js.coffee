@@ -87,4 +87,4 @@ jQuery ->
     setTimeFramesOnHover: ->
       $("#timelines").hover ->
         $("#time_frame_words").stop(true, true).fadeToggle()
-        # $("#life_time_frame").stop(true, true).fadeToggle()
+        $("#life_time_frame").stop(true, true).fadeToggle()

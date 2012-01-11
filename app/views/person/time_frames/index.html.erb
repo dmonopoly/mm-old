@@ -1,4 +1,14 @@
 <!--person/time_frames/index-->
 <div id="time_frame_index">
-	time frames here...
+	<% @time_frames.each do |time_frame| %>
+		<div class="time_frame">
+			<%= time_frame.representation %>
+		</div>
+	<% end %>
+	==
+	<% @single_day_tfs.each do |time_frame| %>
+		<div class="time_frame">
+			<%= time_frame.representation %>
+		</div>
+	<% end %>
 </div>
